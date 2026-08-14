@@ -13,7 +13,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Adhan library removed from here and moved to dynamic loader below -->
+    <!-- Adhan library REMOVED completely -->
 
     <script>
         tailwind.config = {
@@ -46,7 +46,7 @@
 
 <body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
 
-    <!-- ===== NAVBAR ===== -->
+    <!-- ===== NAVBAR ===== (SAME AS BEFORE) -->
     <nav class="sticky top-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -114,7 +114,7 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- ===== HERO SECTION ===== (SAME) -->
     <section class="relative pt-12 pb-8 md:pt-16 md:pb-12 z-10 text-center">
         <div class="max-w-4xl mx-auto px-4">
             <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4">
@@ -195,7 +195,7 @@
         </div>
     </section>
 
-    <!-- ===== TRY OUR OTHER 9 TOOLS SECTION (EXCLUDING PRAYER TIMES) ===== -->
+    <!-- ===== TRY OUR OTHER 9 TOOLS SECTION ===== -->
     <section class="py-10 z-10 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
@@ -204,23 +204,14 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Zakat Calc -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calculator" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Zakat Calculator</h4><p class="text-slate-400 text-xs mb-4">Apni zakat aasan tariqay se calculate karein.</p><a href="zakat.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Qibla Direction -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="compass" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Qibla Direction</h4><p class="text-slate-400 text-xs mb-4">GPS compass se Qibla ka rukh maloom karein.</p><a href="qibla.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Hijri Date -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Islamic Date Converter</h4><p class="text-slate-400 text-xs mb-4">Hijri aur Gregorian dates convert karein.</p><a href="hijri.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Digital Tasbeeh -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="sparkles" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Digital Tasbeeh</h4><p class="text-slate-400 text-xs mb-4">Apne daily azkar mobile par count karein.</p><a href="tasbeeh.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Mosque Finder -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="map-pin" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Mosque Finder</h4><p class="text-slate-400 text-xs mb-4">Apne qareeb ki masjidon ko dhoondhein.</p><a href="mosque.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Inheritance Calc -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="scale" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Inheritance Calc</h4><p class="text-slate-400 text-xs mb-4">Shariah ke mutabiq warisoon ka hissa calculate karein.</p><a href="inheritance.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Islamic Age Calc -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Islamic Age Calc</h4><p class="text-slate-400 text-xs mb-4">Hijri tareekh ke mutabiq umar maloom karein.</p><a href="age.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Nisab Calc -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Nisab Calculator</h4><p class="text-slate-400 text-xs mb-4">Zakat ke liye Nisab ki miqdar dekhein.</p><a href="nisab.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
-                <!-- Fitra Calc -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="hand-coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Fitra Calculator</h4><p class="text-slate-400 text-xs mb-4">Apni Zakaat-ul-Fitr ki miqdar calculate karein.</p><a href="fitra.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
             </div>
         </div>
@@ -278,6 +269,7 @@
     </footer>
 
     <script>
+        // UI Setup
         lucide.createIcons();
         document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
         document.getElementById('mobile-tools-toggle').addEventListener('click', () => {
@@ -285,168 +277,105 @@
             document.getElementById('mobile-chevron').classList.toggle('open');
         });
 
-        // ---- NEW: Dynamic Adhan Library Loader ----
-        let adhanLoading = false;
-        let adhanLoadCallbacks = [];
+        // ============== NEW LOGIC: NO ADHAN LIBRARY REQUIRED ==============
 
-        function loadAdhanLibrary(callback) {
-            // If already available, call callback immediately
-            if (typeof adhan !== 'undefined') {
-                callback();
-                return;
-            }
-            // If already loading, add to queue
-            if (adhanLoading) {
-                adhanLoadCallbacks.push(callback);
-                return;
-            }
-            // Start loading
-            adhanLoading = true;
-            adhanLoadCallbacks.push(callback);
-
-            // Multiple CDN sources for fallback
-            const sources = [
-                'https://cdn.jsdelivr.net/npm/adhan@1.3.0/dist/adhan.min.js',
-                'https://unpkg.com/adhan@1.3.0/dist/adhan.min.js',
-                'https://cdnjs.cloudflare.com/ajax/libs/adhan/1.3.0/adhan.min.js'
+        function setDefaultTimes() {
+            const now = new Date();
+            document.querySelector('#prayer-fajr .prayer-time').textContent = '4:42 AM';
+            document.querySelector('#prayer-dhuhr .prayer-time').textContent = '12:16 PM';
+            document.querySelector('#prayer-asr .prayer-time').textContent = '3:48 PM';
+            document.querySelector('#prayer-maghrib .prayer-time').textContent = '6:50 PM';
+            document.querySelector('#prayer-isha .prayer-time').textContent = '8:15 PM';
+            document.getElementById('date_display').textContent = 'Date: ' + now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+            document.getElementById('location_display').textContent = 'Location: Default (Islamabad/Pakistan)';
+            
+            // Next prayer logic for default times
+            const timeMap = [
+                { name: 'Fajr', time: '4:42 AM' },
+                { name: 'Dhuhr', time: '12:16 PM' },
+                { name: 'Asr', time: '3:48 PM' },
+                { name: 'Maghrib', time: '6:50 PM' },
+                { name: 'Isha', time: '8:15 PM' }
             ];
-            let index = 0;
-
-            function tryLoad() {
-                if (index >= sources.length) {
-                    document.getElementById('status_text').innerText = "Adhan library failed to load. Please check your internet and refresh.";
-                    adhanLoading = false;
-                    adhanLoadCallbacks = [];
-                    return;
-                }
-                const script = document.createElement('script');
-                script.src = sources[index];
-                script.onload = function() {
-                    // Check if loading succeeded
-                    if (typeof adhan !== 'undefined') {
-                        adhanLoading = false;
-                        const callbacks = adhanLoadCallbacks.slice();
-                        adhanLoadCallbacks = [];
-                        callbacks.forEach(cb => cb());
-                    } else {
-                        // Library loaded but object not found, try next source
-                        index++;
-                        tryLoad();
-                    }
-                };
-                script.onerror = function() {
-                    // Failed to load, try next source
-                    index++;
-                    tryLoad();
-                };
-                document.head.appendChild(script);
+            let next = timeMap[0];
+            const todayStr = now.toLocaleDateString('en-US');
+            for (let p of timeMap) {
+                const dateStr = todayStr + ' ' + p.time;
+                const d = new Date(dateStr);
+                if (d > now) { next = p; break; }
             }
-            tryLoad();
+            document.getElementById('next_prayer_display').textContent = 'Next prayer: ' + next.name;
         }
 
-        // ---- CALCULATE AND DISPLAY ----
-        function calculateAndDisplay(lat, lon, isDefault) {
+        function updateUIFromAPI(json) {
+            const times = json.data.timings;
+            document.querySelector('#prayer-fajr .prayer-time').textContent = times.Fajr;
+            document.querySelector('#prayer-dhuhr .prayer-time').textContent = times.Dhuhr;
+            document.querySelector('#prayer-asr .prayer-time').textContent = times.Asr;
+            document.querySelector('#prayer-maghrib .prayer-time').textContent = times.Maghrib;
+            document.querySelector('#prayer-isha .prayer-time').textContent = times.Isha;
+            
+            const now = new Date();
+            document.getElementById('date_display').textContent = 'Date: ' + now.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+            document.getElementById('next_prayer_display').textContent = 'Next prayer: ' + json.data.meta.next_prayer;
+        }
+
+        async function fetchPrayerTimesFromAPI(lat, lon) {
             const status = document.getElementById('status_text');
-            // Safety check: if adhan is still not loaded, trigger loader
-            if (typeof adhan === 'undefined') {
-                status.innerText = "Loading Adhan library, please wait...";
-                loadAdhanLibrary(function() {
-                    calculateAndDisplay(lat, lon, isDefault);
-                });
-                return;
-            }
-
+            const guideBox = document.getElementById('location_guide');
+            guideBox.classList.add('hidden');
+            
+            status.innerText = "Fetching latest timings from Aladhan API...";
+            
             try {
-                const coordinates = new adhan.Coordinates(lat, lon);
-                const params = adhan.CalculationMethod.Karachi();
-                params.madhab = adhan.Madhab.Hanafi;
+                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                const url = `https://api.aladhan.com/v1/timings?latitude=${lat}&longitude=${lon}&method=1&school=1&timezone=${timezone}`;
+                const response = await fetch(url);
+                if (!response.ok) throw new Error("Network response was not ok");
+                const json = await response.json();
+                if (json.code !== 200) throw new Error("API returned error code");
                 
-                const date = new Date();
-                const prayerTimes = new adhan.PrayerTimes(coordinates, date, params);
-
-                const timeFormat = { hour: '2-digit', minute: '2-digit', hour12: true };
-                document.querySelector('#prayer-fajr .prayer-time').textContent = prayerTimes.fajr.toLocaleTimeString('en-US', timeFormat);
-                document.querySelector('#prayer-dhuhr .prayer-time').textContent = prayerTimes.dhuhr.toLocaleTimeString('en-US', timeFormat);
-                document.querySelector('#prayer-asr .prayer-time').textContent = prayerTimes.asr.toLocaleTimeString('en-US', timeFormat);
-                document.querySelector('#prayer-maghrib .prayer-time').textContent = prayerTimes.maghrib.toLocaleTimeString('en-US', timeFormat);
-                document.querySelector('#prayer-isha .prayer-time').textContent = prayerTimes.isha.toLocaleTimeString('en-US', timeFormat);
-
-                const now = new Date();
-                const prayers = [
-                    { name: 'Fajr', time: prayerTimes.fajr, id: 'prayer-fajr' },
-                    { name: 'Dhuhr', time: prayerTimes.dhuhr, id: 'prayer-dhuhr' },
-                    { name: 'Asr', time: prayerTimes.asr, id: 'prayer-asr' },
-                    { name: 'Maghrib', time: prayerTimes.maghrib, id: 'prayer-maghrib' },
-                    { name: 'Isha', time: prayerTimes.isha, id: 'prayer-isha' }
-                ];
-
-                document.querySelectorAll('.prayer-card').forEach(el => el.classList.remove('active'));
-
-                let nextPrayer = null;
-                for (let p of prayers) {
-                    if (p.time > now) {
-                        nextPrayer = p;
-                        break;
-                    }
-                }
-                if (!nextPrayer) nextPrayer = prayers[0];
-
-                const nextEl = document.getElementById(nextPrayer.id);
-                if (nextEl) nextEl.classList.add('active');
-
-                document.getElementById('next_prayer_display').textContent = 'Next prayer: ' + nextPrayer.name;
-                document.getElementById('date_display').textContent = 'Date: ' + date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
+                updateUIFromAPI(json);
+                document.getElementById('location_display').textContent = 'GPS Location: ' + lat.toFixed(2) + ', ' + lon.toFixed(2);
+                status.innerText = "GPS Location Active. Prayer times loaded from API.";
                 
-                if (isDefault) {
-                    document.getElementById('location_display').textContent = 'Location: Default (Islamabad/Pakistan)';
-                } else {
-                    document.getElementById('location_display').textContent = 'GPS Location: ' + lat.toFixed(2) + ', ' + lon.toFixed(2);
-                    status.innerText = "GPS Location Active. Prayer times calculated successfully.";
-                }
-
-            } catch (e) {
-                status.innerText = "Error calculating prayer times.";
-                console.error(e);
+            } catch (error) {
+                status.innerText = "Internet/API failed. Showing default Islamabad timings.";
+                setDefaultTimes();
             }
         }
 
-        // ---- AUTO DETECT PRAYER TIMES ----
         function autoDetectPrayerTimes() {
             const status = document.getElementById('status_text');
             const guideBox = document.getElementById('location_guide');
             
-            // First, ensure Adhan library is loaded
-            status.innerText = "Loading Adhan library...";
+            if (!navigator.geolocation) {
+                status.innerText = "Geolocation not supported. Showing default Islamabad timings.";
+                setDefaultTimes();
+                return;
+            }
+
+            status.innerText = "Detecting GPS location...";
             guideBox.classList.add('hidden');
 
-            loadAdhanLibrary(function() {
-                // Once loaded, proceed with geolocation
-                status.innerText = "Detecting GPS location...";
-                
-                if (!navigator.geolocation) {
-                    status.innerText = "Geolocation not supported by browser. Showing default Islamabad timings.";
-                    calculateAndDisplay(33.6844, 73.0479, true);
-                    return;
-                }
-
-                navigator.geolocation.getCurrentPosition(pos => {
+            navigator.geolocation.getCurrentPosition(
+                (pos) => {
                     const lat = pos.coords.latitude;
                     const lon = pos.coords.longitude;
-                    calculateAndDisplay(lat, lon, false);
-                }, error => {
-                    status.innerText = "Location permission blocked by browser. Showing default Islamabad timings.";
+                    fetchPrayerTimesFromAPI(lat, lon);
+                },
+                (error) => {
+                    status.innerText = "Location permission blocked. Showing default Islamabad timings.";
                     guideBox.classList.remove('hidden');
-                    calculateAndDisplay(33.6844, 73.0479, true);
-                }, { enableHighAccuracy: true, timeout: 10000 });
-            });
+                    setDefaultTimes();
+                },
+                { enableHighAccuracy: true, timeout: 10000 }
+            );
         }
 
-        // ---- INITIAL LOAD ON PAGE START ----
+        // Load Default Times on page load immediately (so times are never blank)
         document.addEventListener('DOMContentLoaded', function() {
-            // Load library and display default Islamabad timings
-            loadAdhanLibrary(function() {
-                calculateAndDisplay(33.6844, 73.0479, true);
-            });
+            setDefaultTimes();
         });
     </script>
 </body>
