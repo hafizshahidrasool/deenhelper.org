@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ur" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <title>Free Digital Tasbeeh Counter Online: Count Your Azkar Easily</title>
+    <meta name="description" content="Count your daily azkar and tasbeeh online with our free digital tasbeeh counter tool with custom targets." />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        emerald: { 500: '#10b981', 600: '#059669' },
+                        dark: { 950: '#030712', 900: '#0f172a', 800: '#1e293b' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glow-emerald { filter: blur(120px); background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(0, 0, 0, 0) 70%); }
+        .glow-amber { filter: blur(120px); background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, rgba(0, 0, 0, 0) 70%); }
+        .glass-panel { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.06); }
+        .gradient-text { background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #f59e0b 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent; }
+        .mobile-submenu { transition: all 0.3s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        .mobile-submenu.open { max-height: 500px; opacity: 1; }
+        .chevron-icon { transition: transform 0.3s ease; }
+        .chevron-icon.open { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                        <i data-lucide="moon" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Islamic<span class="text-emerald-400">Tools</span></span>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="text-xs font-semibold uppercase tracking-wider text-emerald-400 flex items-center gap-1">Tools <i data-lucide="chevron-down" class="w-3 h-3 transition-transform group-hover:rotate-180"></i></a>
+                        <div class="absolute left-0 top-full mt-2 hidden group-hover:block glass-panel border border-white/5 rounded-xl p-4 w-[280px] z-50 shadow-2xl space-y-1.5">
+                            <a href="zakat.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Zakat Calculator</a>
+                            <a href="prayer.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Prayer Times</a>
+                            <a href="qibla.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Qibla Direction</a>
+                            <a href="hijri.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Hijri Date</a>
+                            <a href="tasbeeh.html" class="block px-3 py-2 rounded-lg text-sm text-emerald-400 bg-white/5">Digital Tasbeeh</a>
+                            <hr class="border-white/5 my-1">
+                            <a href="mosque.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Mosque Finder</a>
+                            <a href="inheritance.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Inheritance Calc</a>
+                            <a href="age.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Age Calculator</a>
+                            <a href="nisab.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Nisab Calculator</a>
+                            <a href="fitra.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Fitra Calculator</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">About</a>
+                    <a href="contact.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Contact</a>
+                </div>
+
+                <div class="lg:hidden">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/5 px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300">Home</a>
+            <div>
+                <button id="mobile-tools-toggle" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
+                    <span>Tools</span>
+                    <i data-lucide="chevron-down" id="mobile-chevron" class="w-4 h-4 chevron-icon"></i>
+                </button>
+                <div id="mobile-tools-dropdown" class="mobile-submenu pt-2 pb-2">
+                    <div class="grid grid-cols-2 gap-1.5 pl-2 pr-2">
+                        <a href="zakat.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Zakat Calc</a>
+                        <a href="prayer.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Prayer Times</a>
+                        <a href="qibla.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Qibla Finder</a>
+                        <a href="hijri.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Hijri Date</a>
+                        <a href="tasbeeh.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-emerald-400 bg-white/10">Tasbeeh</a>
+                        <a href="mosque.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Mosque Finder</a>
+                        <a href="inheritance.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Inheritance</a>
+                        <a href="age.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Age Calc</a>
+                        <a href="nisab.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Nisab Calc</a>
+                        <a href="fitra.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Fitra Calc</a>
+                    </div>
+                </div>
+            </div>
+            <a href="about.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">About Us</a>
+            <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="relative pt-12 pb-8 md:pt-16 md:pb-12 z-10 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4">
+                Digital Dhikr Counter
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+                Free Tasbeeh Counter: <span class="gradient-text">Count Online</span>
+            </h1>
+            <p class="text-slate-300 text-base max-w-xl mx-auto mb-6">
+                Apni tasbeeh aasani se count karein, reset karein aur apni counting par nazar rakhein.
+            </p>
+            <a href="#counter" class="px-8 py-3 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 transition-all shadow-lg inline-block">
+                Start Counter Now
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== TOOL WIDGET SECTION ===== -->
+    <section id="counter" class="py-6 z-10 relative">
+        <div class="max-w-xl mx-auto px-4">
+            <div class="glass-panel border border-emerald-500/20 rounded-3xl p-6 sm:p-8 text-center shadow-2xl">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center justify-center gap-2">
+                    <i data-lucide="sparkles" class="text-emerald-400"></i> Digital Tasbeeh Counter
+                </h3>
+
+                <div class="mb-4">
+                    <span class="text-xs text-slate-400 font-bold uppercase tracking-wider mr-2">Set Target:</span>
+                    <div class="inline-flex gap-2 mt-2">
+                        <button onclick="setTarget(33)" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-emerald-500/40 text-xs font-bold text-slate-200">33</button>
+                        <button onclick="setTarget(99)" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-emerald-500/40 text-xs font-bold text-slate-200">99</button>
+                        <button onclick="setTarget(100)" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-emerald-500/40 text-xs font-bold text-slate-200">100</button>
+                        <button onclick="setCustomTarget()" class="px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 hover:border-emerald-500/40 text-xs font-bold text-emerald-400">Custom</button>
+                    </div>
+                </div>
+
+                <p class="text-xs text-slate-400">Target: <span id="target_display" class="font-bold text-white">33</span></p>
+
+                <div id="count_display" class="text-6xl font-black text-emerald-400 my-6">0</div>
+
+                <button onclick="increment()" class="w-full py-5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-extrabold text-2xl rounded-2xl shadow-xl transition-all active:scale-95 mb-4">
+                    Count (+1)
+                </button>
+
+                <button onclick="resetCount()" class="px-6 py-2 rounded-xl bg-red-500/20 border border-red-500/30 text-red-400 hover:bg-red-500/30 text-xs font-bold transition-all">
+                    Reset Counter
+                </button>
+
+                <div class="w-full bg-dark-900 h-3 rounded-full overflow-hidden mt-6 border border-white/10">
+                    <div id="progress_bar" class="bg-gradient-to-r from-emerald-500 to-teal-400 h-full w-0 transition-all duration-300"></div>
+                </div>
+                <p id="progress_text" class="text-xs text-slate-400 mt-2">0% Completed</p>
+                <div id="status_msg" class="text-sm font-bold text-emerald-400 mt-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SEO CONTENT SECTION ===== -->
+    <section class="py-10 z-10 relative">
+        <div class="max-w-4xl mx-auto px-4 space-y-8 text-left">
+            <div class="glass-panel border border-white/5 rounded-2xl p-8">
+                <h3 class="text-2xl font-bold text-white mb-4">What Is a Tasbeeh Counter</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                    Digital Tasbeeh Counter ek online web utility hai jo musalmanon ko apne zikr, durood sharif, aur tasbeeh ki counting me aasaani faraham karti hai.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TRY OUR OTHER 9 TOOLS SECTION (EXCLUDING TASBEEH) ===== -->
+    <section class="py-10 z-10 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-10">
+                <h3 class="text-2xl font-extrabold text-white">Try Our Other 9 Free Tools</h3>
+                <p class="text-slate-400 text-xs mt-2">Apni daily ibadat ko aasan banane ke liye baqi tools istemal karein</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Zakat Calc -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calculator" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Zakat Calculator</h4><p class="text-slate-400 text-xs mb-4">Apni zakat aasan tariqay se calculate karein.</p><a href="zakat.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Prayer Times -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="clock" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Prayer Times</h4><p class="text-slate-400 text-xs mb-4">Apne ilaqay ke accurate namaz ke auqat dekhein.</p><a href="prayer.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Qibla Direction -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="compass" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Qibla Direction</h4><p class="text-slate-400 text-xs mb-4">GPS compass se Qibla ka rukh maloom karein.</p><a href="qibla.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Hijri Date -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Islamic Date Converter</h4><p class="text-slate-400 text-xs mb-4">Hijri aur Gregorian dates convert karein.</p><a href="hijri.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Mosque Finder -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="map-pin" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Mosque Finder</h4><p class="text-slate-400 text-xs mb-4">Apne qareeb ki masjidon ko dhoondhein.</p><a href="mosque.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Inheritance Calc -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="scale" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Inheritance Calc</h4><p class="text-slate-400 text-xs mb-4">Shariah ke mutabiq warisoon ka hissa calculate karein.</p><a href="inheritance.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Islamic Age Calc -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Islamic Age Calc</h4><p class="text-slate-400 text-xs mb-4">Hijri tareekh ke mutabiq umar maloom karein.</p><a href="age.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Nisab Calc -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Nisab Calculator</h4><p class="text-slate-400 text-xs mb-4">Zakat ke liye Nisab ki miqdar dekhein.</p><a href="nisab.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <!-- Fitra Calc -->
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="hand-coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Fitra Calculator</h4><p class="text-slate-400 text-xs mb-4">Apni Zakaat-ul-Fitr ki miqdar calculate karein.</p><a href="fitra.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="border-t border-white/5 py-12 relative z-10 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col items-center justify-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                    <i data-lucide="moon" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-lg font-extrabold tracking-tight text-white">Islamic<span class="text-emerald-400">Tools</span></span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-slate-400 text-left">
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Main Pages</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-emerald-400">Home</a></li>
+                        <li><a href="about.html" class="hover:text-emerald-400">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-emerald-400">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Core Tools</h4>
+                    <ul class="space-y-2">
+                        <li><a href="zakat.html" class="hover:text-emerald-400">Zakat Calculator</a></li>
+                        <li><a href="prayer.html" class="hover:text-emerald-400">Prayer Times</a></li>
+                        <li><a href="qibla.html" class="hover:text-emerald-400">Qibla Direction</a></li>
+                        <li><a href="hijri.html" class="hover:text-emerald-400">Hijri Converter</a></li>
+                        <li><a href="tasbeeh.html" class="hover:text-emerald-400">Digital Tasbeeh</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">More Utilities</h4>
+                    <ul class="space-y-2">
+                        <li><a href="mosque.html" class="hover:text-emerald-400">Mosque Finder</a></li>
+                        <li><a href="inheritance.html" class="hover:text-emerald-400">Inheritance Calc</a></li>
+                        <li><a href="age.html" class="hover:text-emerald-400">Islamic Age Calc</a></li>
+                        <li><a href="nisab.html" class="hover:text-emerald-400">Nisab Calculator</a></li>
+                        <li><a href="fitra.html" class="hover:text-emerald-400">Fitra Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Legal & Terms</h4>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="hover:text-emerald-400">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-emerald-400">Terms of Service</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-emerald-400">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-[10px] text-slate-600 text-center border-t border-white/5 pt-6">&copy; 2026 Free Islamic Tools. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => { document.getElementById('mobile-menu').classList.toggle('hidden'); });
+        document.getElementById('mobile-tools-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-tools-dropdown').classList.toggle('open');
+            document.getElementById('mobile-chevron').classList.toggle('open');
+        });
+
+        let count = parseInt(localStorage.getItem('tasbeeh_count')) || 0;
+        let target = parseInt(localStorage.getItem('tasbeeh_target')) || 33;
+
+        function updateDisplay() {
+            document.getElementById('count_display').innerText = count;
+            document.getElementById('target_display').innerText = target;
+            let progress = Math.min(100, Math.round((count / target) * 100));
+            document.getElementById('progress_bar').style.width = progress + '%';
+            document.getElementById('progress_text').innerText = progress + '% Completed';
+
+            if (count >= target && target > 0) {
+                document.getElementById('status_msg').innerText = "Target Reached! SubhanAllah";
+            } else {
+                document.getElementById('status_msg').innerText = "";
+            }
+        }
+
+        function increment() {
+            count++;
+            localStorage.setItem('tasbeeh_count', count);
+            updateDisplay();
+        }
+
+        function resetCount() {
+            count = 0;
+            localStorage.setItem('tasbeeh_count', count);
+            updateDisplay();
+        }
+
+        function setTarget(val) {
+            target = val;
+            localStorage.setItem('tasbeeh_target', target);
+            updateDisplay();
+        }
+
+        function setCustomTarget() {
+            let customVal = prompt("Enter custom target count:", "100");
+            if (customVal && !isNaN(customVal) && parseInt(customVal) > 0) {
+                setTarget(parseInt(customVal));
+            }
+        }
+
+        updateDisplay();
+    </script>
+</body>
+</html>
