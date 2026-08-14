@@ -13,7 +13,7 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/adhan/1.3.0/adhan.min.js"></script>
+    <!-- Adhan library removed from here and moved to dynamic loader below -->
 
     <script>
         tailwind.config = {
@@ -285,10 +285,74 @@
             document.getElementById('mobile-chevron').classList.toggle('open');
         });
 
+        // ---- NEW: Dynamic Adhan Library Loader ----
+        let adhanLoading = false;
+        let adhanLoadCallbacks = [];
+
+        function loadAdhanLibrary(callback) {
+            // If already available, call callback immediately
+            if (typeof adhan !== 'undefined') {
+                callback();
+                return;
+            }
+            // If already loading, add to queue
+            if (adhanLoading) {
+                adhanLoadCallbacks.push(callback);
+                return;
+            }
+            // Start loading
+            adhanLoading = true;
+            adhanLoadCallbacks.push(callback);
+
+            // Multiple CDN sources for fallback
+            const sources = [
+                'https://cdn.jsdelivr.net/npm/adhan@1.3.0/dist/adhan.min.js',
+                'https://unpkg.com/adhan@1.3.0/dist/adhan.min.js',
+                'https://cdnjs.cloudflare.com/ajax/libs/adhan/1.3.0/adhan.min.js'
+            ];
+            let index = 0;
+
+            function tryLoad() {
+                if (index >= sources.length) {
+                    document.getElementById('status_text').innerText = "Adhan library failed to load. Please check your internet and refresh.";
+                    adhanLoading = false;
+                    adhanLoadCallbacks = [];
+                    return;
+                }
+                const script = document.createElement('script');
+                script.src = sources[index];
+                script.onload = function() {
+                    // Check if loading succeeded
+                    if (typeof adhan !== 'undefined') {
+                        adhanLoading = false;
+                        const callbacks = adhanLoadCallbacks.slice();
+                        adhanLoadCallbacks = [];
+                        callbacks.forEach(cb => cb());
+                    } else {
+                        // Library loaded but object not found, try next source
+                        index++;
+                        tryLoad();
+                    }
+                };
+                script.onerror = function() {
+                    // Failed to load, try next source
+                    index++;
+                    tryLoad();
+                };
+                document.head.appendChild(script);
+            }
+            tryLoad();
+        }
+
+        // ---- CALCULATE AND DISPLAY ----
         function calculateAndDisplay(lat, lon, isDefault) {
             const status = document.getElementById('status_text');
+            // Safety check: if adhan is still not loaded, trigger loader
             if (typeof adhan === 'undefined') {
-                status.innerText = "Adhan library failed to load. Please refresh page.";
+                status.innerText = "Loading Adhan library, please wait...";
+                loadAdhanLibrary(function() {
+                    calculateAndDisplay(lat, lon, isDefault);
+                });
                 return;
             }
 
@@ -346,31 +410,44 @@
             }
         }
 
+        // ---- AUTO DETECT PRAYER TIMES ----
         function autoDetectPrayerTimes() {
             const status = document.getElementById('status_text');
             const guideBox = document.getElementById('location_guide');
             
-            if (!navigator.geolocation) {
-                status.innerText = "Geolocation not supported by browser. Showing default Islamabad timings.";
-                calculateAndDisplay(33.6844, 73.0479, true);
-                return;
-            }
-
-            status.innerText = "Detecting GPS location...";
+            // First, ensure Adhan library is loaded
+            status.innerText = "Loading Adhan library...";
             guideBox.classList.add('hidden');
 
-            navigator.geolocation.getCurrentPosition(pos => {
-                const lat = pos.coords.latitude;
-                const lon = pos.coords.longitude;
-                calculateAndDisplay(lat, lon, false);
-            }, error => {
-                status.innerText = "Location permission blocked by browser. Showing default Islamabad timings.";
-                guideBox.classList.remove('hidden');
-                calculateAndDisplay(33.6844, 73.0479, true);
-            }, { enableHighAccuracy: true, timeout: 10000 });
+            loadAdhanLibrary(function() {
+                // Once loaded, proceed with geolocation
+                status.innerText = "Detecting GPS location...";
+                
+                if (!navigator.geolocation) {
+                    status.innerText = "Geolocation not supported by browser. Showing default Islamabad timings.";
+                    calculateAndDisplay(33.6844, 73.0479, true);
+                    return;
+                }
+
+                navigator.geolocation.getCurrentPosition(pos => {
+                    const lat = pos.coords.latitude;
+                    const lon = pos.coords.longitude;
+                    calculateAndDisplay(lat, lon, false);
+                }, error => {
+                    status.innerText = "Location permission blocked by browser. Showing default Islamabad timings.";
+                    guideBox.classList.remove('hidden');
+                    calculateAndDisplay(33.6844, 73.0479, true);
+                }, { enableHighAccuracy: true, timeout: 10000 });
+            });
         }
 
-        calculateAndDisplay(33.6844, 73.0479, true);
+        // ---- INITIAL LOAD ON PAGE START ----
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load library and display default Islamabad timings
+            loadAdhanLibrary(function() {
+                calculateAndDisplay(33.6844, 73.0479, true);
+            });
+        });
     </script>
 </body>
 </html>
