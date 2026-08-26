@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: hafizshahidrasool/islamic-tools
+  branch: main
+  auth_endpoint: https://oauthproxy.yyasaraliyasarali.workers.dev/oauth/callback
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Image", name: "image", widget: "image", required: false }
