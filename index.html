@@ -66,6 +66,7 @@
                         </div>
                     </div>
                     <a href="about.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">About</a>
+                    <a href="blog.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Blog</a>
                     <a href="contact.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Contact</a>
                 </div>
 
@@ -78,19 +79,14 @@
             </div>
         </div>
 
-        <!-- ========== Mobile Menu (Optimized 2-Column Grid) ========== -->
+        <!-- ========== Mobile Menu ========== -->
         <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/5 px-4 pt-3 pb-6 space-y-2">
-            
             <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-emerald-400 bg-white/5">Home</a>
-            
-            <!-- Mobile Accordion with 2-Column Grid -->
             <div>
                 <button id="mobile-tools-toggle" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
                     <span>Tools</span>
                     <i data-lucide="chevron-down" id="mobile-chevron" class="w-4 h-4 chevron-icon"></i>
                 </button>
-                
-                <!-- 2 Column Compact Grid for Tools on Mobile -->
                 <div id="mobile-tools-dropdown" class="mobile-submenu pt-2 pb-2">
                     <div class="grid grid-cols-2 gap-1.5 pl-2 pr-2">
                         <a href="zakat.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Zakat Calc</a>
@@ -106,8 +102,8 @@
                     </div>
                 </div>
             </div>
-
             <a href="about.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">About Us</a>
+            <a href="blog.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">Blog</a>
             <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">Contact Us</a>
         </div>
     </nav>
@@ -139,79 +135,61 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Tool Card 1 -->
+                <!-- Tool Cards 1-10 (same as before) -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="calculator" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Zakat Calculator</h3>
                     <p class="text-slate-400 text-sm mb-4">Apni zakat aasan aur accurate tariqay se calculate karein.</p>
                     <a href="zakat.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 2 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="clock" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Prayer Times</h3>
                     <p class="text-slate-400 text-sm mb-4">Apne shehar ke accurate namaz ke auqat dekhein.</p>
                     <a href="prayer.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 3 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="compass" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Qibla Direction</h3>
                     <p class="text-slate-400 text-sm mb-4">Apni location se sahi Qibla ka rukh maloom karein.</p>
                     <a href="qibla.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 4 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="calendar" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Islamic Date Converter</h3>
                     <p class="text-slate-400 text-sm mb-4">Hijri aur Gregorian dates ko aapas me convert karein.</p>
                     <a href="hijri.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 5 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="sparkles" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Digital Tasbeeh</h3>
                     <p class="text-slate-400 text-sm mb-4">Apne daily azkar aur tasbeeh mobile par count karein.</p>
                     <a href="tasbeeh.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 6 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Mosque Finder</h3>
                     <p class="text-slate-400 text-sm mb-4">Apne qareeb ki masjidon ko dhoondhein aur unka route dekhein.</p>
                     <a href="mosque.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 7 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="scale" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Inheritance Calculator</h3>
                     <p class="text-slate-400 text-sm mb-4">Shariah ke mutabiq warisoon ka hissa accurate calculate karein.</p>
                     <a href="inheritance.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 8 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="calendar-clock" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Islamic Age Calculator</h3>
                     <p class="text-slate-400 text-sm mb-4">Hijri aur Gregorian tareekh ke mutabiq apni umar maloom karein.</p>
                     <a href="age.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 9 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="coins" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Nisab Calculator</h3>
                     <p class="text-slate-400 text-sm mb-4">Zakat nikaalne se pehle Nisab ki miqdar maloom karein.</p>
                     <a href="nisab.html" class="inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a>
                 </div>
-
-                <!-- Tool Card 10 -->
                 <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-4 text-emerald-400"><i data-lucide="hand-coins" class="w-6 h-6"></i></div>
                     <h3 class="text-lg font-bold text-white mb-2">Zakaat Fitra Calculator</h3>
@@ -222,10 +200,9 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER (Categorized Column Grid for Mobile Optimization) ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="border-t border-white/5 py-12 relative z-10 bg-dark-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-            
             <div class="flex flex-col items-center justify-center gap-2">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
                     <i data-lucide="moon" class="w-5 h-5 text-white"></i>
@@ -233,13 +210,13 @@
                 <span class="text-lg font-extrabold tracking-tight text-white">Deen <span class="text-emerald-400">Helper</span></span>
             </div>
 
-            <!-- Clean 4-Column Footer Grid for Mobile & Desktop -->
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-slate-400 text-left">
                 <div>
                     <h4 class="font-bold text-white uppercase tracking-wider mb-3">Main Pages</h4>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-emerald-400">Home</a></li>
                         <li><a href="about.html" class="hover:text-emerald-400">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-emerald-400">Blog</a></li>
                         <li><a href="contact.html" class="hover:text-emerald-400">Contact Us</a></li>
                     </ul>
                 </div>
@@ -280,7 +257,6 @@
         </div>
     </footer>
 
-    <!-- JS Logic -->
     <script>
         lucide.createIcons();
 
