@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>Prayer Times: Auto GPS Calculator</title>
-    <meta name="description" content="Accurate daily prayer times based on your current GPS location. No API key required." />
+    <title>Prayer Times - Deen Helper</title>
+    <meta name="description" content="Accurate daily prayer times based on your current GPS location using Deen Helper. No API key required." />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,7 +13,6 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Adhan library REMOVED completely -->
 
     <script>
         tailwind.config = {
@@ -46,7 +45,7 @@
 
 <body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
 
-    <!-- ===== NAVBAR ===== (SAME AS BEFORE) -->
+    <!-- ===== NAVBAR ===== -->
     <nav class="sticky top-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
@@ -54,7 +53,7 @@
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
                         <i data-lucide="moon" class="w-5 h-5 text-white"></i>
                     </div>
-                    <span class="text-xl font-extrabold tracking-tight text-white">Islamic<span class="text-emerald-400">Tools</span></span>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Deen <span class="text-emerald-400">Helper</span></span>
                 </a>
 
                 <div class="hidden lg:flex items-center gap-6">
@@ -114,7 +113,7 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== (SAME) -->
+    <!-- ===== HERO SECTION ===== -->
     <section class="relative pt-12 pb-8 md:pt-16 md:pb-12 z-10 text-center">
         <div class="max-w-4xl mx-auto px-4">
             <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4">
@@ -195,11 +194,11 @@
         </div>
     </section>
 
-    <!-- ===== TRY OUR OTHER 9 TOOLS SECTION ===== -->
+    <!-- ===== TRY OUR OTHER DEEN HELPER TOOLS SECTION ===== -->
     <section class="py-10 z-10 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
-                <h3 class="text-2xl font-extrabold text-white">Try Our Other 9 Free Tools</h3>
+                <h3 class="text-2xl font-extrabold text-white">Try Our Other Deen Helper Tools</h3>
                 <p class="text-slate-400 text-xs mt-2">Apni daily ibadat ko aasan banane ke liye baqi tools istemal karein</p>
             </div>
 
@@ -224,7 +223,7 @@
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
                     <i data-lucide="moon" class="w-5 h-5 text-white"></i>
                 </div>
-                <span class="text-lg font-extrabold tracking-tight text-white">Islamic<span class="text-emerald-400">Tools</span></span>
+                <span class="text-lg font-extrabold tracking-tight text-white">Deen <span class="text-emerald-400">Helper</span></span>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-slate-400 text-left">
                 <div>
@@ -264,7 +263,7 @@
                     </ul>
                 </div>
             </div>
-            <p class="text-[10px] text-slate-600 text-center border-t border-white/5 pt-6">&copy; 2026 Free Islamic Tools. All Rights Reserved.</p>
+            <p class="text-[10px] text-slate-600 text-center border-t border-white/5 pt-6">&copy; 2026 Deen Helper. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -277,7 +276,7 @@
             document.getElementById('mobile-chevron').classList.toggle('open');
         });
 
-        // ============== NEW LOGIC: NO ADHAN LIBRARY REQUIRED ==============
+        // ============== LOGIC: NO EXTERNAL LIBRARY REQUIRED ==============
 
         function setDefaultTimes() {
             const now = new Date();
