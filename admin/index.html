@@ -1,0 +1,202 @@
+ editPost(post));
+        card.querySelector('.delete-post').addEventListener('click', () => deletePost(post.id));
+      });
+    } catch (err) {
+      showStatus('Could not load blog posts.', true);
+    }
+  }
+
+  function editPost(post) {
+    document.getElementById('blog-id').value = post.id;
+    document.getElementById('blog-title').value = post.title;
+    document.getElementById('blog-slug').value = post.slug;
+    document.getElementById('blog-content').value = post.content;
+    document.getElementById('blog-form-title').textContent = 'Edit Post';
+    document.getElementById('blog-cancel-btn').style.display = 'inline-flex';
+  }
+
+  function resetBlogForm() {
+    document.getElementById('blog-id').value = '';
+    document.getElementById('blog-title').value = '';
+    document.getElementById('blog-slug').value = '';
+    document.getElementById('blog-content').value = '';
+    document.getElementById('blog-form-title').textContent = 'Add New Post';
+    document.getElementById('blog-cancel-btn').style.display = 'none';
+  }
+
+  document.getElementById('blog-cancel-btn').addEventListener('click', resetBlogForm);
+
+  document.getElementById('blog-save-btn').addEventListener('click', async () => {
+    const id = document.getElementById('blog-id').value;
+    const body = {
+      title: document.getElementById('blog-title').value.trim(),
+      slug: document.getElementById('blog-slug').value.trim(),
+      content: document.getElementById('blog-content').value.trim(),
+      published: true
+    };
+    if (!body.title || !body.slug || !body.content) {
+      showStatus('Fill title, slug and content first.', true);
+      return;
+    }
+    try {
+      const res = await fetch(id ? `/api/blog/${id}` : '/api/blog', {
+        method: id ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        showStatus('Post saved.', false);
+        resetBlogForm();
+        loadBlog();
+      } else {
+        showStatus('Save failed.', true);
+      }
+    } catch (err) {
+      showStatus('Could not reach server.', true);
+    }
+  });
+
+  async function deletePost(id) {
+    if (!confirm('Delete this post?')) return;
+    await fetch(`/api/blog/${id}`, { method: 'DELETE' });
+    loadBlog();
+  }
+
+  // ---- TOOLS ----
+  async function loadTools() {
+    try {
+      const res = await fetch('/api/tools');
+      const tools = await res.json();
+      const list = document.getElementById('tools-list');
+      list.innerHTML = '';
+      tools.forEach(tool => {
+        const card = document.createElement('div');
+        card.className = 'item-card';
+        card.innerHTML = `
+          <h3>${escapeHtml(tool.name)}</h3>
+          <div class="meta">${escapeHtml(tool.description || '')} &middot; ${escapeHtml(tool.url)}</div>
+          <div class="item-actions">
+            <button class="secondary edit-tool" data-id="${tool.id}">Edit</button>
+            <button class="danger delete-tool" data-id="${tool.id}">Delete</button>
+          </div>`;
+        list.appendChild(card);
+        card.querySelector('.edit-tool').addEventListener('click', () => editTool(tool));
+        card.querySelector('.delete-tool').addEventListener('click', () => deleteTool(tool.id));
+      });
+    } catch (err) {
+      showStatus('Could not load tools.', true);
+    }
+  }
+
+  function editTool(tool) {
+    document.getElementById('tool-id').value = tool.id;
+    document.getElementById('tool-name').value = tool.name;
+    document.getElementById('tool-slug').value = tool.slug;
+    document.getElementById('tool-desc').value = tool.description || '';
+    document.getElementById('tool-url').value = tool.url;
+    document.getElementById('tools-form-title').textContent = 'Edit Tool';
+    document.getElementById('tool-cancel-btn').style.display = 'inline-flex';
+  }
+
+  function resetToolForm() {
+    document.getElementById('tool-id').value = '';
+    document.getElementById('tool-name').value = '';
+    document.getElementById('tool-slug').value = '';
+    document.getElementById('tool-desc').value = '';
+    document.getElementById('tool-url').value = '';
+    document.getElementById('tools-form-title').textContent = 'Add New Tool';
+    document.getElementById('tool-cancel-btn').style.display = 'none';
+  }
+
+  document.getElementById('tool-cancel-btn').addEventListener('click', resetToolForm);
+
+  document.getElementById('tool-save-btn').addEventListener('click', async () => {
+    const id = document.getElementById('tool-id').value;
+    const body = {
+      name: document.getElementById('tool-name').value.trim(),
+      slug: document.getElementById('tool-slug').value.trim(),
+      description: document.getElementById('tool-desc').value.trim(),
+      url: document.getElementById('tool-url').value.trim(),
+      is_active: true
+    };
+    if (!body.name || !body.slug || !body.url) {
+      showStatus('Fill name, slug and URL first.', true);
+      return;
+    }
+    try {
+      const res = await fetch(id ? `/api/tools/${id}` : '/api/tools', {
+        method: id ? 'PUT' : 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body)
+      });
+      if (res.ok) {
+        showStatus('Tool saved.', false);
+        resetToolForm();
+        loadTools();
+      } else {
+        showStatus('Save failed.', true);
+      }
+    } catch (err) {
+      showStatus('Could not reach server.', true);
+    }
+  });
+
+  async function deleteTool(id) {
+    if (!confirm('Delete this tool?')) return;
+    await fetch(`/api/tools/${id}`, { method: 'DELETE' });
+    loadTools();
+  }
+
+  // ---- SETTINGS ----
+  async function loadSettings() {
+    try {
+      const res = await fetch('/api/settings');
+      const settings = await res.json();
+      document.getElementById('mosque-list').value = settings.mosque_list || '[]';
+      document.getElementById('prayer-settings').value = settings.prayer_settings || '{}';
+    } catch (err) {
+      showStatus('Could not load settings.', true);
+    }
+  }
+
+  async function saveSetting(key, value, label) {
+    try {
+      JSON.parse(value);
+    } catch (err) {
+      showStatus(label + ' is not valid JSON. Check the format.', true);
+      return;
+    }
+    try {
+      const res = await fetch('/api/settings', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key, value })
+      });
+      if (res.ok) {
+        showStatus(label + ' saved.', false);
+      } else {
+        showStatus('Save failed.', true);
+      }
+    } catch (err) {
+      showStatus('Could not reach server.', true);
+    }
+  }
+
+  document.getElementById('save-mosque-btn').addEventListener('click', () => {
+    saveSetting('mosque_list', document.getElementById('mosque-list').value.trim(), 'Mosque list');
+  });
+
+  document.getElementById('save-prayer-btn').addEventListener('click', () => {
+    saveSetting('prayer_settings', document.getElementById('prayer-settings').value.trim(), 'Prayer settings');
+  });
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str == null ? '' : str;
+    return div.innerHTML;
+  }
+});
+</script>
+
+</body>
+</html>
