@@ -311,68 +311,107 @@
             document.getElementById('mobile-chevron').classList.toggle('open');
         });
 
-        // ===== LANGUAGE SWITCH =====
+        // ============================================================
+        // LANGUAGE SWITCH & BLOG POSTS LOADER (UPDATED)
+        // ============================================================
         let currentLang = 'ur';
+        const postsList = document.getElementById('blog-posts-list');
+        const emptyState = document.getElementById('blog-empty-state');
 
+        // Helper to escape HTML
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str == null ? '' : str;
+            return div.innerHTML;
+        }
+
+        // Load blog posts for given language
+        function loadBlogPosts(lang) {
+            // Show loading state (optional)
+            postsList.innerHTML =
+                '<div class="text-center py-12 text-slate-400">Loading posts...</div>';
+            emptyState.classList.add('hidden');
+
+            fetch(`/api/blog?lang=${lang}`)
+                .then(res => res.json())
+                .then(posts => {
+                    // Clear list
+                    postsList.innerHTML = '';
+
+                    if (!posts || posts.length === 0) {
+                        // Show empty state with translated text (already handled by applyLang)
+                        emptyState.classList.remove('hidden');
+                        return;
+                    }
+
+                    // Render each post
+                    posts.forEach(post => {
+                        const article = document.createElement('article');
+                        article.className =
+                            'glass-panel border border-white/10 rounded-2xl p-6 md:p-8';
+                        // Use the title and content from API (they should be in the requested language)
+                        article.innerHTML = `
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">${escapeHtml(post.title)}</h2>
+                            <p class="text-xs text-slate-500 mb-4">${escapeHtml(post.created_at || '')}</p>
+                            <div class="text-slate-300 leading-relaxed space-y-3">${post.content}</div>
+                        `;
+                        postsList.appendChild(article);
+                    });
+                })
+                .catch(err => {
+                    console.error('Error fetching blog posts:', err);
+                    // On error, show empty state (or error message)
+                    postsList.innerHTML =
+                        '<div class="text-center py-12 text-red-400">Failed to load posts. Please try again later.</div>';
+                });
+        }
+
+        // Apply language: update static texts, dir, and reload posts
         function applyLang(lang) {
             currentLang = lang;
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
 
+            // Update all data-en/data-ur elements
             document.querySelectorAll('[data-en]').forEach(el => {
                 const text = lang === 'ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
                 if (text !== null) el.textContent = text;
             });
 
+            // Toggle active class on language buttons
             document.querySelectorAll('.lang-btn').forEach(btn => {
                 const active = btn.dataset.lang === lang;
                 btn.classList.toggle('text-emerald-400', active);
                 btn.classList.toggle('text-slate-300', !active);
             });
 
+            // Save preference
             localStorage.setItem('deenhelper_lang', lang);
+
+            // Reload blog posts for the new language
+            loadBlogPosts(lang);
         }
 
+        // Attach click events to language buttons
         document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+            btn.addEventListener('click', () => {
+                const newLang = btn.dataset.lang;
+                if (newLang !== currentLang) {
+                    applyLang(newLang);
+                }
+            });
         });
 
         // Load saved language or default to 'ur'
-        const savedLang = localStorage.getItem('deenhelper_lang');
-        applyLang(savedLang || 'ur');
+        const savedLang = localStorage.getItem('deenhelper_lang') || 'ur';
+        // Apply language (this will also load posts)
+        applyLang(savedLang);
 
-        // Load blog posts from the admin panel database
-        fetch('/api/blog')
-            .then(res => res.json())
-            .then(posts => {
-                const list = document.getElementById('blog-posts-list');
-                const emptyState = document.getElementById('blog-empty-state');
-
-                if (!posts || posts.length === 0) {
-                    emptyState.classList.remove('hidden');
-                    return;
-                }
-
-                posts.forEach(post => {
-                    const article = document.createElement('article');
-                    article.className = 'glass-panel border border-white/10 rounded-2xl p-6 md:p-8';
-                    article.innerHTML = `
-                        <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">${escapeHtml(post.title)}</h2>
-                        <p class="text-xs text-slate-500 mb-4">${escapeHtml(post.created_at || '')}</p>
-                        <div class="text-slate-300 leading-relaxed space-y-3">${post.content}</div>
-                    `;
-                    list.appendChild(article);
-                });
-            })
-            .catch(() => {
-                document.getElementById('blog-empty-state').classList.remove('hidden');
-            });
-
-        function escapeHtml(str) {
-            const div = document.createElement('div');
-            div.textContent = str == null ? '' : str;
-            return div.innerHTML;
-        }
+        // NOTE: The backend API (/api/blog) must accept a 'lang' parameter
+        // and return the appropriate columns:
+        //   - If lang=en: return title_en as title, content_en as content
+        //   - If lang=ur: return title_ur as title, content_ur as content
+        // Also make sure to include created_at, etc.
     </script>
 </body>
 </html>
