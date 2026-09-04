@@ -35,6 +35,9 @@
         .mobile-submenu.open { max-height: 500px; opacity: 1; }
         .chevron-icon { transition: transform 0.3s ease; }
         .chevron-icon.open { transform: rotate(180deg); }
+        /* Language switch styles */
+        .lang-btn { font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 0.5rem; transition: all 0.2s ease; }
+        .lang-btn.text-emerald-400 { background: rgba(16, 185, 129, 0.1); }
     </style>
 </head>
 <body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
@@ -51,29 +54,41 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-6">
-                    <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Home</a>
+                    <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="Home" data-ur="ہوم">Home</a>
                     <div class="relative group">
-                        <a href="#" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white flex items-center gap-1">Tools <i data-lucide="chevron-down" class="w-3 h-3 transition-transform group-hover:rotate-180"></i></a>
+                        <a href="#" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white flex items-center gap-1" data-en="Tools" data-ur="ٹولز">Tools <i data-lucide="chevron-down" class="w-3 h-3 transition-transform group-hover:rotate-180"></i></a>
                         <div class="absolute left-0 top-full mt-2 hidden group-hover:block glass-panel border border-white/5 rounded-xl p-4 w-[280px] z-50 shadow-2xl space-y-1.5">
-                            <a href="zakat.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Zakat Calculator</a>
-                            <a href="prayer.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Prayer Times</a>
-                            <a href="qibla.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Qibla Direction</a>
-                            <a href="hijri.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Hijri Date</a>
-                            <a href="tasbeeh.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Digital Tasbeeh</a>
+                            <a href="zakat.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Zakat Calculator" data-ur="زکوٰۃ کیلکولیٹر">Zakat Calculator</a>
+                            <a href="prayer.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a>
+                            <a href="qibla.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Qibla Direction" data-ur="قبلہ کی سمت">Qibla Direction</a>
+                            <a href="hijri.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Hijri Date" data-ur="ہجری تاریخ">Hijri Date</a>
+                            <a href="tasbeeh.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Digital Tasbeeh" data-ur="ڈیجیٹل تسبیح">Digital Tasbeeh</a>
                             <hr class="border-white/5 my-1">
-                            <a href="mosque.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Mosque Finder</a>
-                            <a href="inheritance.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Inheritance Calc</a>
-                            <a href="age.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Age Calculator</a>
-                            <a href="nisab.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Nisab Calculator</a>
-                            <a href="fitra.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Fitra Calculator</a>
+                            <a href="mosque.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder</a>
+                            <a href="inheritance.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Inheritance Calc" data-ur="وراثت کیلکولیٹر">Inheritance Calc</a>
+                            <a href="age.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Age Calculator" data-ur="عمر کیلکولیٹر">Age Calculator</a>
+                            <a href="nisab.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Nisab Calculator" data-ur="نصاب کیلکولیٹر">Nisab Calculator</a>
+                            <a href="fitra.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Fitra Calculator" data-ur="فطرہ کیلکولیٹر">Fitra Calculator</a>
                         </div>
                     </div>
-                    <a href="about.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">About</a>
-                    <a href="blog.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Blog</a>
-                    <a href="contact.html" class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Contact</a>
+                    <a href="about.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="About" data-ur="ہمارے بارے میں">About</a>
+                    <a href="blog.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="Blog" data-ur="بلاگ">Blog</a>
+                    <a href="contact.html" class="text-xs font-semibold uppercase tracking-wider text-emerald-400" data-en="Contact" data-ur="رابطہ">Contact</a>
+
+                    <!-- Language buttons desktop -->
+                    <div class="flex items-center gap-1 pl-3 border-l border-white/10">
+                        <button class="lang-btn text-emerald-400" data-lang="en">EN</button>
+                        <span class="text-slate-600 text-xs">|</span>
+                        <button class="lang-btn text-slate-300" data-lang="ur">اردو</button>
+                    </div>
                 </div>
 
-                <div class="lg:hidden">
+                <div class="lg:hidden flex items-center gap-2">
+                    <div class="flex items-center gap-1">
+                        <button class="lang-btn text-emerald-400" data-lang="en">EN</button>
+                        <span class="text-slate-600 text-xs">|</span>
+                        <button class="lang-btn text-slate-300" data-lang="ur">اردو</button>
+                    </div>
                     <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
@@ -82,43 +97,43 @@
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/5 px-4 pt-3 pb-6 space-y-2">
-            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300">Home</a>
+            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="Home" data-ur="ہوم">Home</a>
             <div>
                 <button id="mobile-tools-toggle" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
-                    <span>Tools</span>
+                    <span data-en="Tools" data-ur="ٹولز">Tools</span>
                     <i data-lucide="chevron-down" id="mobile-chevron" class="w-4 h-4 chevron-icon"></i>
                 </button>
                 <div id="mobile-tools-dropdown" class="mobile-submenu pt-2 pb-2">
                     <div class="grid grid-cols-2 gap-1.5 pl-2 pr-2">
-                        <a href="zakat.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Zakat Calc</a>
-                        <a href="prayer.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Prayer Times</a>
-                        <a href="qibla.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Qibla Finder</a>
-                        <a href="hijri.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Hijri Date</a>
-                        <a href="tasbeeh.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Tasbeeh</a>
-                        <a href="mosque.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Mosque Finder</a>
-                        <a href="inheritance.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Inheritance</a>
-                        <a href="age.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Age Calc</a>
-                        <a href="nisab.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Nisab Calc</a>
-                        <a href="fitra.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Fitra Calc</a>
+                        <a href="zakat.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Zakat Calc" data-ur="زکوٰۃ">Zakat Calc</a>
+                        <a href="prayer.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Prayer Times" data-ur="نماز اوقات">Prayer Times</a>
+                        <a href="qibla.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Qibla Finder" data-ur="قبلہ">Qibla Finder</a>
+                        <a href="hijri.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Hijri Date" data-ur="ہجری تاریخ">Hijri Date</a>
+                        <a href="tasbeeh.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Tasbeeh" data-ur="تسبیح">Tasbeeh</a>
+                        <a href="mosque.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Mosque Finder" data-ur="مسجد">Mosque Finder</a>
+                        <a href="inheritance.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Inheritance" data-ur="وراثت">Inheritance</a>
+                        <a href="age.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Age Calc" data-ur="عمر">Age Calc</a>
+                        <a href="nisab.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Nisab Calc" data-ur="نصاب">Nisab Calc</a>
+                        <a href="fitra.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Fitra Calc" data-ur="فطرہ">Fitra Calc</a>
                     </div>
                 </div>
             </div>
-            <a href="about.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">About Us</a>
-            <a href="blog.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">Blog</a>
-            <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-emerald-400 bg-white/10">Contact Us</a>
+            <a href="about.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a>
+            <a href="blog.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="Blog" data-ur="بلاگ">Blog</a>
+            <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-emerald-400 bg-white/10" data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a>
         </div>
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
     <section class="relative pt-12 pb-8 md:pt-16 md:pb-12 z-10 text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4" data-en="Get In Touch With Us" data-ur="ہم سے رابطہ کریں">
                 Get In Touch With Us
             </span>
             <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
-                Contact Us: <span class="gradient-text">Send Your Queries</span>
+                <span data-en="Contact Us" data-ur="ہم سے رابطہ کریں">Contact Us:</span> <span class="gradient-text" data-en="Send Your Queries" data-ur="اپنے سوالات بھیجیں">Send Your Queries</span>
             </h1>
-            <p class="text-slate-300 text-base max-w-xl mx-auto mb-6">
+            <p class="text-slate-300 text-base max-w-xl mx-auto mb-6" data-en="If you have any question, feedback or technical issue, contact us via the form below." data-ur="اگر آپ کا کوئی سوال، فیڈ بیک یا تکنیکی مسئلہ ہے تو نیچے دیے گئے فارم کے ذریعے ہم سے رابطہ کریں۔">
                 Agar aap ka koi sawal, feedback ya technical masla hai toh niche diye gaye form ke zariye humse rabta karein.
             </p>
         </div>
@@ -133,25 +148,29 @@
                     <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400">
                         <i data-lucide="clock" class="w-5 h-5"></i>
                     </div>
-                    <h4 class="text-base font-bold text-white mb-1">Response Time</h4>
-                    <p class="text-slate-300 text-xs">Hum tamam queries ka jawab 24 se 48 ghanton ke andar dene ki poori koshish karte hain.</p>
+                    <h4 class="text-base font-bold text-white mb-1" data-en="Response Time" data-ur="جوابی وقت">Response Time</h4>
+                    <p class="text-slate-300 text-xs" data-en="We try our best to reply to all queries within 24 to 48 hours." data-ur="ہم تمام سوالات کا جواب 24 سے 48 گھنٹوں کے اندر دینے کی پوری کوشش کرتے ہیں۔">
+                        Hum tamam queries ka jawab 24 se 48 ghanton ke andar dene ki poori koshish karte hain.
+                    </p>
                 </div>
 
                 <div class="glass-panel border border-white/5 rounded-2xl p-6">
                     <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400">
                         <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </div>
-                    <h4 class="text-base font-bold text-white mb-1">Privacy Guarantee</h4>
-                    <p class="text-slate-300 text-xs">Aap ka naam aur email address bilkul mehfooz rakha jaye ga aur kisi third party ko share nahi kiya jaye ga.</p>
+                    <h4 class="text-base font-bold text-white mb-1" data-en="Privacy Guarantee" data-ur="رازداری کی ضمانت">Privacy Guarantee</h4>
+                    <p class="text-slate-300 text-xs" data-en="Your name and email address will be kept confidential and not shared with any third party." data-ur="آپ کا نام اور ای میل ایڈریس مکمل طور پر محفوظ رکھا جائے گا اور کسی تھرڈ پارٹی کو شیئر نہیں کیا جائے گا۔">
+                        Aap ka naam aur email address bilkul mehfooz rakha jaye ga aur kisi third party ko share nahi kiya jaye ga.
+                    </p>
                 </div>
             </div>
 
             <!-- EMBEDDED LIVE GOOGLE FORM -->
             <div class="glass-panel border border-emerald-500/20 rounded-2xl p-6 sm:p-8 space-y-4">
                 <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
-                    <i data-lucide="mail" class="text-emerald-400"></i> Contact Form
+                    <i data-lucide="mail" class="text-emerald-400"></i> <span data-en="Contact Form" data-ur="رابطہ فارم">Contact Form</span>
                 </h3>
-                <p class="text-slate-300 text-xs mb-4">
+                <p class="text-slate-300 text-xs mb-4" data-en="Send your message via the official Google Form below:" data-ur="نیچے دیے گئے سرکاری گوگل فارم کے ذریعے اپنا پیغام بھیجیں:">
                     Niche diye gaye official Google Form ke zariye apna paigham bhejien:
                 </p>
                 <div class="w-full overflow-hidden rounded-xl bg-white/5 p-1 border border-white/10">
@@ -161,7 +180,7 @@
 
             <div class="text-center pt-2">
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSdr8cjJKlDnwgJjKJPK-Vf53pPZwgWFYbkdaKYB1WVevGXLAA/viewform?usp=publish-editor" target="_blank" rel="noopener" class="px-8 py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 transition-all shadow-lg inline-flex items-center gap-2">
-                    <span>Open Form in New Tab</span> <i data-lucide="external-link" class="w-4 h-4"></i>
+                    <span data-en="Open Form in New Tab" data-ur="فارم کو نئے ٹیب میں کھولیں">Open Form in New Tab</span> <i data-lucide="external-link" class="w-4 h-4"></i>
                 </a>
             </div>
 
@@ -179,44 +198,44 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-slate-400 text-left">
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Main Pages</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Main Pages" data-ur="اہم صفحات">Main Pages</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-emerald-400">Home</a></li>
-                        <li><a href="about.html" class="hover:text-emerald-400">About Us</a></li>
-                        <li><a href="blog.html" class="hover:text-emerald-400">Blog</a></li>
-                        <li><a href="contact.html" class="hover:text-emerald-400">Contact Us</a></li>
+                        <li><a href="index.html" class="hover:text-emerald-400" data-en="Home" data-ur="ہوم">Home</a></li>
+                        <li><a href="about.html" class="hover:text-emerald-400" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-emerald-400" data-en="Blog" data-ur="بلاگ">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-emerald-400" data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Core Tools</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Core Tools" data-ur="بنیادی ٹولز">Core Tools</h4>
                     <ul class="space-y-2">
-                        <li><a href="zakat.html" class="hover:text-emerald-400">Zakat Calculator</a></li>
-                        <li><a href="prayer.html" class="hover:text-emerald-400">Prayer Times</a></li>
-                        <li><a href="qibla.html" class="hover:text-emerald-400">Qibla Direction</a></li>
-                        <li><a href="hijri.html" class="hover:text-emerald-400">Hijri Converter</a></li>
-                        <li><a href="tasbeeh.html" class="hover:text-emerald-400">Digital Tasbeeh</a></li>
+                        <li><a href="zakat.html" class="hover:text-emerald-400" data-en="Zakat Calculator" data-ur="زکوٰۃ کیلکولیٹر">Zakat Calculator</a></li>
+                        <li><a href="prayer.html" class="hover:text-emerald-400" data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a></li>
+                        <li><a href="qibla.html" class="hover:text-emerald-400" data-en="Qibla Direction" data-ur="قبلہ کی سمت">Qibla Direction</a></li>
+                        <li><a href="hijri.html" class="hover:text-emerald-400" data-en="Hijri Converter" data-ur="ہجری کنورٹر">Hijri Converter</a></li>
+                        <li><a href="tasbeeh.html" class="hover:text-emerald-400" data-en="Digital Tasbeeh" data-ur="ڈیجیٹل تسبیح">Digital Tasbeeh</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">More Utilities</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="More Utilities" data-ur="مزید سہولیات">More Utilities</h4>
                     <ul class="space-y-2">
-                        <li><a href="mosque.html" class="hover:text-emerald-400">Mosque Finder</a></li>
-                        <li><a href="inheritance.html" class="hover:text-emerald-400">Inheritance Calc</a></li>
-                        <li><a href="age.html" class="hover:text-emerald-400">Islamic Age Calc</a></li>
-                        <li><a href="nisab.html" class="hover:text-emerald-400">Nisab Calculator</a></li>
-                        <li><a href="fitra.html" class="hover:text-emerald-400">Fitra Calculator</a></li>
+                        <li><a href="mosque.html" class="hover:text-emerald-400" data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder</a></li>
+                        <li><a href="inheritance.html" class="hover:text-emerald-400" data-en="Inheritance Calc" data-ur="وراثت کیلکولیٹر">Inheritance Calc</a></li>
+                        <li><a href="age.html" class="hover:text-emerald-400" data-en="Islamic Age Calc" data-ur="اسلامی عمر کیلکولیٹر">Islamic Age Calc</a></li>
+                        <li><a href="nisab.html" class="hover:text-emerald-400" data-en="Nisab Calculator" data-ur="نصاب کیلکولیٹر">Nisab Calculator</a></li>
+                        <li><a href="fitra.html" class="hover:text-emerald-400" data-en="Fitra Calculator" data-ur="فطرہ کیلکولیٹر">Fitra Calculator</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Legal & Terms</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Legal &amp; Terms" data-ur="قانونی اور شرائط">Legal & Terms</h4>
                     <ul class="space-y-2">
-                        <li><a href="privacy.html" class="hover:text-emerald-400">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-emerald-400">Terms of Service</a></li>
-                        <li><a href="disclaimer.html" class="hover:text-emerald-400">Disclaimer</a></li>
+                        <li><a href="privacy.html" class="hover:text-emerald-400" data-en="Privacy Policy" data-ur="پرائیویسی پالیسی">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-emerald-400" data-en="Terms of Service" data-ur="شرائط و ضوابط">Terms of Service</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-emerald-400" data-en="Disclaimer" data-ur="ڈس کلیمر">Disclaimer</a></li>
                     </ul>
                 </div>
             </div>
-            <p class="text-[10px] text-slate-600 text-center border-t border-white/5 pt-6">&copy; 2026 Deen Helper. All Rights Reserved.</p>
+            <p class="text-[10px] text-slate-600 text-center border-t border-white/5 pt-6" data-en="© 2026 Deen Helper. All Rights Reserved." data-ur="© 2026 دین ہیلپر۔ جملہ حقوق محفوظ ہیں۔">&copy; 2026 Deen Helper. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -227,6 +246,33 @@
             document.getElementById('mobile-tools-dropdown').classList.toggle('open');
             document.getElementById('mobile-chevron').classList.toggle('open');
         });
+
+        // ===== LANGUAGE SWITCH =====
+        let currentLang = 'ur';
+
+        function applyLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.textContent = lang === 'ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const active = btn.dataset.lang === lang;
+                btn.classList.toggle('text-emerald-400', active);
+                btn.classList.toggle('text-slate-300', !active);
+            });
+
+            localStorage.setItem('deenhelper_lang', lang);
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+        });
+
+        applyLang(localStorage.getItem('deenhelper_lang') || 'ur');
     </script>
 </body>
 </html>

@@ -31,6 +31,9 @@
         .mobile-submenu.open { max-height: 500px; opacity: 1; }
         .chevron-icon { transition: transform 0.3s ease; }
         .chevron-icon.open { transform: rotate(180deg); }
+        /* Language switch styles */
+        .lang-btn { font-size: 0.7rem; font-weight: 700; padding: 0.25rem 0.5rem; border-radius: 0.5rem; transition: all 0.2s ease; }
+        .lang-btn.text-emerald-400 { background: rgba(16, 185, 129, 0.1); }
     </style>
 </head>
 <body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
@@ -47,29 +50,41 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-6">
-                    <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Home</a>
+                    <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="Home" data-ur="ہوم">Home</a>
                     <div class="relative group">
-                        <a href="#" class="text-xs font-semibold uppercase tracking-wider text-emerald-400 flex items-center gap-1">Tools <i data-lucide="chevron-down" class="w-3 h-3 transition-transform group-hover:rotate-180"></i></a>
+                        <a href="#" class="text-xs font-semibold uppercase tracking-wider text-emerald-400 flex items-center gap-1" data-en="Tools" data-ur="ٹولز">Tools <i data-lucide="chevron-down" class="w-3 h-3 transition-transform group-hover:rotate-180"></i></a>
                         <div class="absolute left-0 top-full mt-2 hidden group-hover:block glass-panel border border-white/5 rounded-xl p-4 w-[280px] z-50 shadow-2xl space-y-1.5">
-                            <a href="zakat.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Zakat Calculator</a>
-                            <a href="prayer.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Prayer Times</a>
-                            <a href="qibla.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Qibla Direction</a>
-                            <a href="hijri.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Hijri Date</a>
-                            <a href="tasbeeh.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Digital Tasbeeh</a>
+                            <a href="zakat.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Zakat Calculator" data-ur="زکوٰۃ کیلکولیٹر">Zakat Calculator</a>
+                            <a href="prayer.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a>
+                            <a href="qibla.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Qibla Direction" data-ur="قبلہ کی سمت">Qibla Direction</a>
+                            <a href="hijri.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Hijri Date" data-ur="ہجری تاریخ">Hijri Date</a>
+                            <a href="tasbeeh.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Digital Tasbeeh" data-ur="ڈیجیٹل تسبیح">Digital Tasbeeh</a>
                             <hr class="border-white/5 my-1">
-                            <a href="mosque.html" class="block px-3 py-2 rounded-lg text-sm text-emerald-400 bg-white/5">Mosque Finder</a>
-                            <a href="inheritance.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Inheritance Calc</a>
-                            <a href="age.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Age Calculator</a>
-                            <a href="nisab.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Nisab Calculator</a>
-                            <a href="fitra.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5">Fitra Calculator</a>
+                            <a href="mosque.html" class="block px-3 py-2 rounded-lg text-sm text-emerald-400 bg-white/5" data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder</a>
+                            <a href="inheritance.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Inheritance Calc" data-ur="وراثت کیلکولیٹر">Inheritance Calc</a>
+                            <a href="age.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Age Calculator" data-ur="عمر کیلکولیٹر">Age Calculator</a>
+                            <a href="nisab.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Nisab Calculator" data-ur="نصاب کیلکولیٹر">Nisab Calculator</a>
+                            <a href="fitra.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Fitra Calculator" data-ur="فطرہ کیلکولیٹر">Fitra Calculator</a>
                         </div>
                     </div>
-                    <a href="about.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">About</a>
-                    <a href="blog.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Blog</a>
-                    <a href="contact.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white">Contact</a>
+                    <a href="about.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="About" data-ur="ہمارے بارے میں">About</a>
+                    <a href="blog.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="Blog" data-ur="بلاگ">Blog</a>
+                    <a href="contact.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="Contact" data-ur="رابطہ">Contact</a>
+
+                    <!-- Language buttons desktop -->
+                    <div class="flex items-center gap-1 pl-3 border-l border-white/10">
+                        <button class="lang-btn text-emerald-400" data-lang="en">EN</button>
+                        <span class="text-slate-600 text-xs">|</span>
+                        <button class="lang-btn text-slate-300" data-lang="ur">اردو</button>
+                    </div>
                 </div>
 
-                <div class="lg:hidden">
+                <div class="lg:hidden flex items-center gap-2">
+                    <div class="flex items-center gap-1">
+                        <button class="lang-btn text-emerald-400" data-lang="en">EN</button>
+                        <span class="text-slate-600 text-xs">|</span>
+                        <button class="lang-btn text-slate-300" data-lang="ur">اردو</button>
+                    </div>
                     <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
@@ -78,47 +93,47 @@
         </div>
 
         <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/5 px-4 pt-3 pb-6 space-y-2">
-            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300">Home</a>
+            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="Home" data-ur="ہوم">Home</a>
             <div>
                 <button id="mobile-tools-toggle" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
-                    <span>Tools</span>
+                    <span data-en="Tools" data-ur="ٹولز">Tools</span>
                     <i data-lucide="chevron-down" id="mobile-chevron" class="w-4 h-4 chevron-icon"></i>
                 </button>
                 <div id="mobile-tools-dropdown" class="mobile-submenu pt-2 pb-2">
                     <div class="grid grid-cols-2 gap-1.5 pl-2 pr-2">
-                        <a href="zakat.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Zakat Calc</a>
-                        <a href="prayer.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Prayer Times</a>
-                        <a href="qibla.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Qibla Finder</a>
-                        <a href="hijri.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Hijri Date</a>
-                        <a href="tasbeeh.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Tasbeeh</a>
-                        <a href="mosque.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-emerald-400 bg-white/10">Mosque Finder</a>
-                        <a href="inheritance.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Inheritance</a>
-                        <a href="age.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Age Calc</a>
-                        <a href="nisab.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Nisab Calc</a>
-                        <a href="fitra.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]">Fitra Calc</a>
+                        <a href="zakat.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Zakat Calc" data-ur="زکوٰۃ">Zakat Calc</a>
+                        <a href="prayer.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Prayer Times" data-ur="نماز اوقات">Prayer Times</a>
+                        <a href="qibla.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Qibla Finder" data-ur="قبلہ">Qibla Finder</a>
+                        <a href="hijri.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Hijri Date" data-ur="ہجری تاریخ">Hijri Date</a>
+                        <a href="tasbeeh.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Tasbeeh" data-ur="تسبیح">Tasbeeh</a>
+                        <a href="mosque.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-emerald-400 bg-white/10" data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder</a>
+                        <a href="inheritance.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Inheritance" data-ur="وراثت">Inheritance</a>
+                        <a href="age.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Age Calc" data-ur="عمر">Age Calc</a>
+                        <a href="nisab.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Nisab Calc" data-ur="نصاب">Nisab Calc</a>
+                        <a href="fitra.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Fitra Calc" data-ur="فطرہ">Fitra Calc</a>
                     </div>
                 </div>
             </div>
-            <a href="about.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">About Us</a>
-            <a href="blog.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">Blog</a>
-            <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5">Contact Us</a>
+            <a href="about.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a>
+            <a href="blog.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="Blog" data-ur="بلاگ">Blog</a>
+            <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a>
         </div>
     </nav>
 
     <!-- ===== HERO SECTION ===== -->
     <section class="relative pt-12 pb-8 md:pt-16 md:pb-12 z-10 text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4" data-en="Find Nearby Masajid" data-ur="قریبی مساجد تلاش کریں">
                 Find Nearby Masajid
             </span>
             <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
-                Mosque Finder: <span class="gradient-text">Find Masajid Near You</span>
+                <span data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder:</span> <span class="gradient-text" data-en="Find Masajid Near You" data-ur="اپنے قریب مساجد تلاش کریں">Find Masajid Near You</span>
             </h1>
-            <p class="text-slate-300 text-base max-w-xl mx-auto mb-6">
+            <p class="text-slate-300 text-base max-w-xl mx-auto mb-6" data-en="Find mosques near your current GPS location and get directions via Google Maps." data-ur="اپنی GPS لوکیشن سے اپنے قریب کی مساجد تلاش کریں اور Google Maps پر راستہ دیکھیں۔">
                 Apni GPS location se apne qareeb ki masajid dhoondhein aur Google Maps par rasta dekhein.
             </p>
             <button onclick="findNearbyMosques()" class="px-8 py-4 rounded-xl text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 transition-all shadow-lg inline-flex items-center gap-2">
-                <i data-lucide="map-pin" class="w-4 h-4"></i> Find Nearby Mosques
+                <i data-lucide="map-pin" class="w-4 h-4"></i> <span data-en="Find Nearby Mosques" data-ur="قریبی مساجد تلاش کریں">Find Nearby Mosques</span>
             </button>
         </div>
     </section>
@@ -128,18 +143,18 @@
         <div class="max-w-2xl mx-auto px-4">
             <div class="glass-panel border border-emerald-500/20 rounded-3xl p-6 sm:p-8 text-center shadow-2xl">
                 <h3 class="text-xl font-bold text-white mb-2 flex items-center justify-center gap-2">
-                    <i data-lucide="map-pin" class="text-emerald-400"></i> Nearby Masajid Route Finder
+                    <i data-lucide="map-pin" class="text-emerald-400"></i> <span data-en="Nearby Masajid Route Finder" data-ur="قریبی مساجد روٹ فائنڈر">Nearby Masajid Route Finder</span>
                 </h3>
-                <p id="status_text" class="text-xs text-emerald-400 mb-6 font-semibold">Tap button above to detect your GPS location and search masajid.</p>
+                <p id="status_text" class="text-xs text-emerald-400 mb-6 font-semibold" data-en="Tap button above to detect your GPS location and search masajid." data-ur="اوپر دیے گئے بٹن کو دبائیں تاکہ آپ کی GPS لوکیشن معلوم ہو اور مساجد تلاش ہوں۔">Tap button above to detect your GPS location and search masajid.</p>
 
                 <div id="mosque_list" class="space-y-3 text-left">
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
                         <div>
-                            <h4 class="text-sm font-bold text-white">Central Jamia Masjid</h4>
-                            <p class="text-xs text-slate-400">Approx 450 meters away</p>
+                            <h4 class="text-sm font-bold text-white" data-en="Central Jamia Masjid" data-ur="سنٹرل جامع مسجد">Central Jamia Masjid</h4>
+                            <p class="text-xs text-slate-400" data-en="Approx 450 meters away" data-ur="تقریباً 450 میٹر دور">Approx 450 meters away</p>
                         </div>
                         <a href="https://www.google.com/maps/search/masjid+near+me" target="_blank" class="px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-1">
-                            <span>Route</span> <i data-lucide="navigation" class="w-3 h-3"></i>
+                            <span data-en="Route" data-ur="راستہ">Route</span> <i data-lucide="navigation" class="w-3 h-3"></i>
                         </a>
                     </div>
                 </div>
@@ -151,11 +166,11 @@
     <section class="py-10 z-10 relative">
         <div class="max-w-4xl mx-auto px-4 space-y-8 text-left">
             <div class="glass-panel border border-white/5 rounded-2xl p-8">
-                <h3 class="text-2xl font-bold text-white mb-4">Masjid Ki Importance Aur Ba-Jamat Namaz Ki Fazilat</h3>
-                <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                <h3 class="text-2xl font-bold text-white mb-4" data-en="Importance of Mosque and Congregational Prayer" data-ur="مسجد کی اہمیت اور باجماعت نماز کی فضیلت">Masjid Ki Importance Aur Ba-Jamat Namaz Ki Fazilat</h3>
+                <p class="text-slate-300 text-sm leading-relaxed mb-4" data-en="In Islam, the mosque is considered the house of Allah and the social center for Muslims. The reward of praying in congregation is 27 times greater than praying alone. When Muslims are in a new city or on a journey, it is important to find the nearest mosque." data-ur="اسلام میں مسجد کو اللہ کا گھر اور مسلمانوں کا اجتماعی مرکز کہا گیا ہے۔ باجماعت نماز ادا کرنے کی فضیلت انفرادی نماز سے 27 درجے زیادہ ہے۔ جب مسلمان کسی نئے شہر میں یا سفر میں ہوتے ہیں تو قریب ترین مسجد کا پتہ لگانا ضروری ہوتا ہے۔">
                     Islam me masjid ko Allah ka ghar aur musalmanon ka Ijtimaayi markaz kaha gaya hai. Ba-jamat namaz ada karne ki fazilat zati namaz se 27 darjay zyada hoti hai. Jab musalman kisi naye shehar me ya safar me hote hain toh qareebi masjid ka pata lagana zaroori hota hai.
                 </p>
-                <p class="text-slate-300 text-sm leading-relaxed">
+                <p class="text-slate-300 text-sm leading-relaxed" data-en="Our Mosque Finder tool uses your device's GPS coordinates and Google Maps integration to show you the route and distance to the nearest masajid." data-ur="ہمارا مسجد فائنڈر ٹول آپ کے ڈیوائس کے GPS کوآرڈینیٹس اور گوگل میپس انٹیگریشن کے ذریعے آپ کو قریب ترین مساجد کا راستہ اور فاصلہ دکھاتا ہے۔">
                     Hamara yeh Mosque Finder tool aap ke device ke GPS coordinates ki madad se Google Maps integration ke zariye aap ke qareeb tareen masajid ka rasta aur distance batata hai.
                 </p>
             </div>
@@ -166,29 +181,29 @@
     <section class="py-10 z-10 relative border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-10">
-                <h3 class="text-2xl font-extrabold text-white">Try Our Other Deen Helper Tools</h3>
-                <p class="text-slate-400 text-xs mt-2">Apni daily ibadat ko aasan banane ke liye baqi tools istemal karein</p>
+                <h3 class="text-2xl font-extrabold text-white" data-en="Try Our Other Deen Helper Tools" data-ur="ہمارے دیگر دین ہیلپر ٹولز آزمائیں">Try Our Other Deen Helper Tools</h3>
+                <p class="text-slate-400 text-xs mt-2" data-en="Use other tools to make your daily worship easier." data-ur="اپنی روزانہ عبادت کو آسان بنانے کے لیے باقی ٹولز استعمال کریں۔">Apni daily ibadat ko aasan banane ke liye baqi tools istemal karein</p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Zakat Calc -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calculator" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Zakat Calculator</h4><p class="text-slate-400 text-xs mb-4">Apni zakat aasan tariqay se calculate karein.</p><a href="zakat.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calculator" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Zakat Calculator" data-ur="زکوٰۃ کیلکولیٹر">Zakat Calculator</h4><p class="text-slate-400 text-xs mb-4" data-en="Calculate your zakat easily." data-ur="اپنی زکوٰۃ آسان طریقے سے کیلکولیٹ کریں۔">Apni zakat aasan tariqay se calculate karein.</p><a href="zakat.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Prayer Times -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="clock" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Prayer Times</h4><p class="text-slate-400 text-xs mb-4">Apne ilaqay ke accurate namaz ke auqat dekhein.</p><a href="prayer.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="clock" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</h4><p class="text-slate-400 text-xs mb-4" data-en="See accurate prayer times for your area." data-ur="اپنے علاقے کے درست نماز کے اوقات دیکھیں۔">Apne ilaqay ke accurate namaz ke auqat dekhein.</p><a href="prayer.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Qibla Direction -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="compass" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Qibla Direction</h4><p class="text-slate-400 text-xs mb-4">GPS compass se Qibla ka rukh maloom karein.</p><a href="qibla.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="compass" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Qibla Direction" data-ur="قبلہ کی سمت">Qibla Direction</h4><p class="text-slate-400 text-xs mb-4" data-en="Find Qibla direction using GPS compass." data-ur="جی پی ایس کمپاس سے قبلہ کا رخ معلوم کریں۔">GPS compass se Qibla ka rukh maloom karein.</p><a href="qibla.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Hijri Date -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Islamic Date Converter</h4><p class="text-slate-400 text-xs mb-4">Hijri aur Gregorian dates convert karein.</p><a href="hijri.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Islamic Date Converter" data-ur="اسلامی تاریخ کنورٹر">Islamic Date Converter</h4><p class="text-slate-400 text-xs mb-4" data-en="Convert Hijri and Gregorian dates." data-ur="ہجری اور عیسوی تاریخیں تبدیل کریں۔">Hijri aur Gregorian dates convert karein.</p><a href="hijri.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Digital Tasbeeh -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="sparkles" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Digital Tasbeeh</h4><p class="text-slate-400 text-xs mb-4">Apne daily azkar mobile par count karein.</p><a href="tasbeeh.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="sparkles" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Digital Tasbeeh" data-ur="ڈیجیٹل تسبیح">Digital Tasbeeh</h4><p class="text-slate-400 text-xs mb-4" data-en="Count your daily azkar on your mobile." data-ur="اپنے روزانہ اذکار موبائل پر شمار کریں۔">Apne daily azkar mobile par count karein.</p><a href="tasbeeh.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Inheritance Calc -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="scale" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Inheritance Calc</h4><p class="text-slate-400 text-xs mb-4">Shariah ke mutabiq warisoon ka hissa calculate karein.</p><a href="inheritance.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="scale" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Inheritance Calc" data-ur="وراثت کیلکولیٹر">Inheritance Calc</h4><p class="text-slate-400 text-xs mb-4" data-en="Calculate shares for heirs according to Shariah." data-ur="شریعت کے مطابق وارثوں کا حصہ کیلکولیٹ کریں۔">Shariah ke mutabiq warisoon ka hissa calculate karein.</p><a href="inheritance.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Islamic Age Calc -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Islamic Age Calc</h4><p class="text-slate-400 text-xs mb-4">Hijri tareekh ke mutabiq umar maloom karein.</p><a href="age.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="calendar-clock" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Islamic Age Calc" data-ur="اسلامی عمر کیلکولیٹر">Islamic Age Calc</h4><p class="text-slate-400 text-xs mb-4" data-en="Know your age according to Hijri calendar." data-ur="ہجری تقویم کے مطابق اپنی عمر جانیں۔">Hijri tareekh ke mutabiq umar maloom karein.</p><a href="age.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Nisab Calc -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Nisab Calculator</h4><p class="text-slate-400 text-xs mb-4">Zakat ke liye Nisab ki miqdar dekhein.</p><a href="nisab.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Nisab Calculator" data-ur="نصاب کیلکولیٹر">Nisab Calculator</h4><p class="text-slate-400 text-xs mb-4" data-en="Check the Nisab threshold for Zakat." data-ur="زکوٰۃ کے لیے نصاب کی مقدار دیکھیں۔">Zakat ke liye Nisab ki miqdar dekhein.</p><a href="nisab.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
                 <!-- Fitra Calc -->
-                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="hand-coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2">Fitra Calculator</h4><p class="text-slate-400 text-xs mb-4">Apni Zakaat-ul-Fitr ki miqdar calculate karein.</p><a href="fitra.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span>Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
+                <div class="glass-panel border border-white/5 rounded-2xl p-6 text-left hover:border-emerald-500/30 transition-all"><div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mb-3 text-emerald-400"><i data-lucide="hand-coins" class="w-5 h-5"></i></div><h4 class="text-base font-bold text-white mb-2" data-en="Fitra Calculator" data-ur="فطرہ کیلکولیٹر">Fitra Calculator</h4><p class="text-slate-400 text-xs mb-4" data-en="Calculate your Zakaat-ul-Fitr amount." data-ur="اپنی زکوٰۃ الفطر کی مقدار کیلکولیٹ کریں۔">Apni Zakaat-ul-Fitr ki miqdar calculate karein.</p><a href="fitra.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300"><span data-en="Use Tool" data-ur="ٹول استعمال کریں">Use Tool</span> <i data-lucide="chevron-right" class="w-4 h-4"></i></a></div>
             </div>
         </div>
     </section>
@@ -204,44 +219,44 @@
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-slate-400 text-left">
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Main Pages</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Main Pages" data-ur="اہم صفحات">Main Pages</h4>
                     <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-emerald-400">Home</a></li>
-                        <li><a href="about.html" class="hover:text-emerald-400">About Us</a></li>
-                        <li><a href="blog.html" class="hover:text-emerald-400">Blog</a></li>
-                        <li><a href="contact.html" class="hover:text-emerald-400">Contact Us</a></li>
+                        <li><a href="index.html" class="hover:text-emerald-400" data-en="Home" data-ur="ہوم">Home</a></li>
+                        <li><a href="about.html" class="hover:text-emerald-400" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-emerald-400" data-en="Blog" data-ur="بلاگ">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-emerald-400" data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Core Tools</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Core Tools" data-ur="بنیادی ٹولز">Core Tools</h4>
                     <ul class="space-y-2">
-                        <li><a href="zakat.html" class="hover:text-emerald-400">Zakat Calculator</a></li>
-                        <li><a href="prayer.html" class="hover:text-emerald-400">Prayer Times</a></li>
-                        <li><a href="qibla.html" class="hover:text-emerald-400">Qibla Direction</a></li>
-                        <li><a href="hijri.html" class="hover:text-emerald-400">Hijri Converter</a></li>
-                        <li><a href="tasbeeh.html" class="hover:text-emerald-400">Digital Tasbeeh</a></li>
+                        <li><a href="zakat.html" class="hover:text-emerald-400" data-en="Zakat Calculator" data-ur="زکوٰۃ کیلکولیٹر">Zakat Calculator</a></li>
+                        <li><a href="prayer.html" class="hover:text-emerald-400" data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a></li>
+                        <li><a href="qibla.html" class="hover:text-emerald-400" data-en="Qibla Direction" data-ur="قبلہ کی سمت">Qibla Direction</a></li>
+                        <li><a href="hijri.html" class="hover:text-emerald-400" data-en="Hijri Converter" data-ur="ہجری کنورٹر">Hijri Converter</a></li>
+                        <li><a href="tasbeeh.html" class="hover:text-emerald-400" data-en="Digital Tasbeeh" data-ur="ڈیجیٹل تسبیح">Digital Tasbeeh</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">More Utilities</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="More Utilities" data-ur="مزید سہولیات">More Utilities</h4>
                     <ul class="space-y-2">
-                        <li><a href="mosque.html" class="hover:text-emerald-400">Mosque Finder</a></li>
-                        <li><a href="inheritance.html" class="hover:text-emerald-400">Inheritance Calc</a></li>
-                        <li><a href="age.html" class="hover:text-emerald-400">Islamic Age Calc</a></li>
-                        <li><a href="nisab.html" class="hover:text-emerald-400">Nisab Calculator</a></li>
-                        <li><a href="fitra.html" class="hover:text-emerald-400">Fitra Calculator</a></li>
+                        <li><a href="mosque.html" class="hover:text-emerald-400" data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder</a></li>
+                        <li><a href="inheritance.html" class="hover:text-emerald-400" data-en="Inheritance Calc" data-ur="وراثت کیلکولیٹر">Inheritance Calc</a></li>
+                        <li><a href="age.html" class="hover:text-emerald-400" data-en="Islamic Age Calc" data-ur="اسلامی عمر کیلکولیٹر">Islamic Age Calc</a></li>
+                        <li><a href="nisab.html" class="hover:text-emerald-400" data-en="Nisab Calculator" data-ur="نصاب کیلکولیٹر">Nisab Calculator</a></li>
+                        <li><a href="fitra.html" class="hover:text-emerald-400" data-en="Fitra Calculator" data-ur="فطرہ کیلکولیٹر">Fitra Calculator</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold text-white uppercase tracking-wider mb-3">Legal & Terms</h4>
+                    <h4 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Legal &amp; Terms" data-ur="قانونی اور شرائط">Legal & Terms</h4>
                     <ul class="space-y-2">
-                        <li><a href="privacy.html" class="hover:text-emerald-400">Privacy Policy</a></li>
-                        <li><a href="terms.html" class="hover:text-emerald-400">Terms of Service</a></li>
-                        <li><a href="disclaimer.html" class="hover:text-emerald-400">Disclaimer</a></li>
+                        <li><a href="privacy.html" class="hover:text-emerald-400" data-en="Privacy Policy" data-ur="پرائیویسی پالیسی">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-emerald-400" data-en="Terms of Service" data-ur="شرائط و ضوابط">Terms of Service</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-emerald-400" data-en="Disclaimer" data-ur="ڈس کلیمر">Disclaimer</a></li>
                     </ul>
                 </div>
             </div>
-            <p class="text-[10px] text-slate-600 text-center border-t border-white/5 pt-6">&copy; 2026 Deen Helper. All Rights Reserved.</p>
+            <p class="text-[10px] text-slate-600 text-center border-t border-white/5 pt-6" data-en="© 2026 Deen Helper. All Rights Reserved." data-ur="© 2026 دین ہیلپر۔ جملہ حقوق محفوظ ہیں۔">&copy; 2026 Deen Helper. All Rights Reserved.</p>
         </div>
     </footer>
 
@@ -253,32 +268,121 @@
             document.getElementById('mobile-chevron').classList.toggle('open');
         });
 
+        // ===== LANGUAGE SWITCH =====
+        let currentLang = 'ur';
+
+        // Translations for dynamic content
+        const translations = {
+            status_detecting: {
+                en: 'Detecting GPS location...',
+                ur: 'GPS لوکیشن معلوم ہو رہی ہے...'
+            },
+            status_location_active: {
+                en: 'Location Active: Lat {lat}, Lon {lon}',
+                ur: 'لوکیشن فعال: عرض {lat}، طول {lon}'
+            },
+            status_permission_denied: {
+                en: 'Location permission denied. Click below to search on Google Maps.',
+                ur: 'لوکیشن پرمیشن مسترد کر دی گئی۔ نیچے کلک کریں تاکہ گوگل میپس پر تلاش کریں۔'
+            },
+            status_not_supported: {
+                en: 'Geolocation not supported.',
+                ur: 'جیو لوکیشن سپورٹ نہیں ہے۔'
+            },
+            mosque_item_title: {
+                en: 'Nearby Masajid in Google Maps',
+                ur: 'گوگل میپس میں قریبی مساجد'
+            },
+            mosque_item_desc: {
+                en: 'Showing mosques near your exact GPS location',
+                ur: 'آپ کی درست GPS لوکیشن کے قریب مساجد دکھا رہے ہیں'
+            },
+            route_button: {
+                en: 'Open Maps Route',
+                ur: 'مپس روٹ کھولیں'
+            }
+        };
+
+        function t(key, replacements = {}) {
+            let text = translations[key]?.[currentLang] || key;
+            for (let [k, v] of Object.entries(replacements)) {
+                text = text.replace(`{${k}}`, v);
+            }
+            return text;
+        }
+
+        function applyLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = lang === 'ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+                if (text !== null) el.textContent = text;
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const active = btn.dataset.lang === lang;
+                btn.classList.toggle('text-emerald-400', active);
+                btn.classList.toggle('text-slate-300', !active);
+            });
+
+            localStorage.setItem('deenhelper_lang', lang);
+
+            // Update status and mosque list if they contain dynamic content
+            // We'll handle this by re-running the findNearbyMosques logic? 
+            // Better to just update static elements and let dynamic parts be updated on next action.
+            // However, if the status text is already showing a dynamic message, we should update it.
+            // We'll store the current state and re-apply if needed.
+            // For simplicity, we'll just re-run the findNearbyMosques if the user already clicked and got a result?
+            // But we don't have a flag. We can just leave it, user can click again.
+            // But we can update the static part of the status (if it's not a dynamic message)
+            // Let's just update the status if it's still the default message.
+            const statusEl = document.getElementById('status_text');
+            const defaultMsgEn = 'Tap button above to detect your GPS location and search masajid.';
+            const defaultMsgUr = 'اوپر دیے گئے بٹن کو دبائیں تاکہ آپ کی GPS لوکیشن معلوم ہو اور مساجد تلاش ہوں۔';
+            if (statusEl.textContent === defaultMsgEn || statusEl.textContent === defaultMsgUr) {
+                statusEl.textContent = lang === 'ur' ? defaultMsgUr : defaultMsgEn;
+            }
+            // Also update the mosque list static example? We'll leave it as is because it's an example.
+            // The dynamic one will be recreated on next click.
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+        });
+
+        // Load saved language
+        const savedLang = localStorage.getItem('deenhelper_lang');
+        applyLang(savedLang || 'ur');
+
+        // ===== MOSQUE FINDER =====
         function findNearbyMosques() {
             let status = document.getElementById('status_text');
             if (navigator.geolocation) {
-                status.innerText = "Detecting GPS location...";
+                status.textContent = t('status_detecting');
                 navigator.geolocation.getCurrentPosition(pos => {
                     let lat = pos.coords.latitude;
                     let lon = pos.coords.longitude;
-                    status.innerText = "Location Active: Lat " + lat.toFixed(2) + ", Lon " + lon.toFixed(2);
+                    status.textContent = t('status_location_active', { lat: lat.toFixed(2), lon: lon.toFixed(2) });
                     let mapsUrl = "https://www.google.com/maps/search/masjid+near+me/@" + lat + "," + lon + ",15z";
                     document.getElementById('mosque_list').innerHTML = `
                         <div class="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
                             <div>
-                                <h4 class="text-sm font-bold text-white">Nearby Masajid in Google Maps</h4>
-                                <p class="text-xs text-slate-400">Showing mosques near your exact GPS location</p>
+                                <h4 class="text-sm font-bold text-white">${t('mosque_item_title')}</h4>
+                                <p class="text-xs text-slate-400">${t('mosque_item_desc')}</p>
                             </div>
                             <a href="${mapsUrl}" target="_blank" class="px-4 py-2 rounded-lg bg-emerald-600 text-white text-xs font-bold inline-flex items-center gap-1">
-                                <span>Open Maps Route</span> <i data-lucide="navigation" class="w-3 h-3"></i>
+                                <span>${t('route_button')}</span> <i data-lucide="navigation" class="w-3 h-3"></i>
                             </a>
                         </div>
                     `;
                     lucide.createIcons();
                 }, err => {
-                    status.innerText = "Location permission denied. Click below to search on Google Maps.";
+                    status.textContent = t('status_permission_denied');
                 });
             } else {
-                status.innerText = "Geolocation not supported.";
+                status.textContent = t('status_not_supported');
             }
         }
     </script>
