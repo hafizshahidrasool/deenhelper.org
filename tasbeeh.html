@@ -284,41 +284,10 @@
             document.getElementById('mobile-chevron').classList.toggle('open');
         });
 
-        // ===== LANGUAGE SWITCH =====
-        let currentLang = 'ur';
-
-        function applyLang(lang) {
-            currentLang = lang;
-            document.documentElement.lang = lang;
-            document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
-
-            document.querySelectorAll('[data-en]').forEach(el => {
-                const text = lang === 'ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
-                if (text !== null) el.textContent = text;
-            });
-
-            document.querySelectorAll('.lang-btn').forEach(btn => {
-                const active = btn.dataset.lang === lang;
-                btn.classList.toggle('text-emerald-400', active);
-                btn.classList.toggle('text-slate-300', !active);
-            });
-
-            localStorage.setItem('deenhelper_lang', lang);
-
-            // Re-run display update to refresh progress text and status message
-            updateDisplay();
-        }
-
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-        });
-
-        // Load saved language
-        applyLang(localStorage.getItem('deenhelper_lang') || 'ur');
-
-        // ===== TASBEEH LOGIC =====
+        // ===== TASBEEH LOGIC (DEFINED FIRST) =====
         let count = parseInt(localStorage.getItem('tasbeeh_count')) || 0;
         let target = parseInt(localStorage.getItem('tasbeeh_target')) || 33;
+        let currentLang = 'ur'; // will be set by applyLang
 
         function updateDisplay() {
             document.getElementById('count_display').innerText = count;
@@ -364,6 +333,37 @@
             }
         }
 
+        // ===== LANGUAGE SWITCH (NOW AFTER TASBEEH FUNCTIONS) =====
+        function applyLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = lang === 'ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+                if (text !== null) el.textContent = text;
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const active = btn.dataset.lang === lang;
+                btn.classList.toggle('text-emerald-400', active);
+                btn.classList.toggle('text-slate-300', !active);
+            });
+
+            localStorage.setItem('deenhelper_lang', lang);
+
+            // Re-run display update to refresh progress text and status message
+            updateDisplay();
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+        });
+
+        // Load saved language
+        applyLang(localStorage.getItem('deenhelper_lang') || 'ur');
+
+        // Initial display update
         updateDisplay();
     </script>
 </body>
