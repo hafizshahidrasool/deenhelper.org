@@ -16,8 +16,61 @@
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>Deen Helper - Islamic Tools</title>
-    <meta name="description" content="Deen Helper provides Islamic tools for daily life including Zakat Calculator, Prayer Times, Qibla Direction, Hijri Date Converter, and Digital Tasbeeh." />
+    <title>Deen Helper: Free Zakat Calculator, Prayer Times & Islamic Tools</title>
+    <meta name="description" content="Free Islamic tools in one place: Zakat calculator, prayer times, Qibla direction, Hijri date converter, inheritance calculator and more. Fast, accurate, no signup." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://deenhelper.org/" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn previews) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Deen Helper" />
+    <meta property="og:title" content="Deen Helper: Free Zakat Calculator, Prayer Times & Islamic Tools" />
+    <meta property="og:description" content="Free Islamic tools in one place: Zakat calculator, prayer times, Qibla direction, Hijri date converter, inheritance calculator and more." />
+    <meta property="og:url" content="https://deenhelper.org/" />
+    <meta property="og:image" content="https://deenhelper.org/og-image.jpg" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Deen Helper: Free Zakat Calculator, Prayer Times & Islamic Tools" />
+    <meta name="twitter:description" content="Free Islamic tools in one place: Zakat calculator, prayer times, Qibla direction, Hijri date converter and more." />
+    <meta name="twitter:image" content="https://deenhelper.org/og-image.jpg" />
+
+    <!-- Structured data: tells Google AND AI models (ChatGPT, Gemini, Claude) exactly what this site is and does -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Deen Helper",
+      "url": "https://deenhelper.org/",
+      "description": "Free Islamic tools including Zakat calculator, prayer times, Qibla direction, Hijri date converter, inheritance calculator, and more.",
+      "inLanguage": ["en", "ur"],
+      "publisher": {
+        "@type": "Organization",
+        "name": "Deen Helper",
+        "url": "https://deenhelper.org/"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Deen Helper Islamic Tools",
+      "itemListElement": [
+        { "@type": "SoftwareApplication", "position": 1, "name": "Zakat Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/zakat.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 2, "name": "Prayer Times", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/prayer.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 3, "name": "Qibla Direction Finder", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/qibla.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 4, "name": "Hijri Date Converter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/hijri.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 5, "name": "Digital Tasbeeh Counter", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/tasbeeh.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 6, "name": "Mosque Finder", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/mosque.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 7, "name": "Islamic Inheritance Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/inheritance.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 8, "name": "Islamic Age Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/age.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 9, "name": "Nisab Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/nisab.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } },
+        { "@type": "SoftwareApplication", "position": 10, "name": "Fitra Calculator", "applicationCategory": "UtilitiesApplication", "operatingSystem": "Any", "url": "https://deenhelper.org/fitra.html", "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" } }
+      ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -83,7 +136,7 @@
 <body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
 
     <!-- ===== NAVBAR ===== -->
-    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
+    <nav aria-label="Main navigation" class="sticky top-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="index.html" class="flex items-center gap-2.5">
@@ -131,7 +184,7 @@
                         <span class="text-slate-600 text-xs">|</span>
                         <button class="lang-btn text-slate-300" data-lang="ur">اردو</button>
                     </div>
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none">
+                    <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -142,7 +195,7 @@
         <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/5 px-4 pt-3 pb-6 space-y-2">
             <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-emerald-400 bg-white/5"><span data-en="Home" data-ur="ہوم">Home</span></a>
             <div>
-                <button id="mobile-tools-toggle" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
+                <button id="mobile-tools-toggle" aria-label="Toggle tools menu" aria-expanded="false" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
                     <span data-en="Tools" data-ur="ٹولز">Tools</span>
                     <i data-lucide="chevron-down" id="mobile-chevron" class="w-4 h-4 chevron-icon"></i>
                 </button>
@@ -174,9 +227,9 @@
                 <i data-lucide="zap" class="w-4 h-4"></i> <span data-en="Deen Helper – Islamic Digital Suite" data-ur="دین ہیلپر – اسلامی ڈیجیٹل سوٹ">Deen Helper – Islamic Digital Suite</span>
             </span>
             <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-5 leading-tight">
-                <span data-en="Deen Helper for" data-ur="روزمرہ اسلامی ضروریات کے لیے">Deen Helper for</span> <span class="gradient-text" data-en="Daily Islamic Needs" data-ur="دین ہیلپر">Daily Islamic Needs</span>
+                <span data-en="Free Zakat Calculator, Prayer Times &amp; " data-ur="مفت زکوٰۃ کیلکولیٹر، نماز کے اوقات اور ">Free Zakat Calculator, Prayer Times &amp; </span><span class="gradient-text" data-en="Islamic Tools" data-ur="اسلامی ٹولز">Islamic Tools</span>
             </h1>
-            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"><span data-en="Deen Helper Web Utilities for daily calculations and worship assistance." data-ur="روزمرہ حساب اور عبادت میں مدد کے لیے دین ہیلپر کی ویب سہولیات۔">Deen Helper Web Utilities for daily calculations and worship assistance.</span></p>
+            <p class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed"><span data-en="Deen Helper gives you 10 free Islamic utilities, Zakat, Nisab, Qibla, Hijri dates, inheritance and more, in one simple website." data-ur="دین ہیلپر آپ کو ایک ہی ویب سائٹ پر 10 مفت اسلامی سہولیات دیتا ہے، زکوٰۃ، نصاب، قبلہ، ہجری تاریخ، وراثت اور مزید۔">Deen Helper gives you 10 free Islamic utilities, Zakat, Nisab, Qibla, Hijri dates, inheritance and more, in one simple website.</span></p>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
                 <a href="#tools" class="px-8 py-4 rounded-xl text-base font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 transition-all duration-300 shadow-xl shadow-emerald-500/20 flex items-center gap-2 active:scale-95">
                     <span data-en="Explore All Deen Helper Tools" data-ur="دین ہیلپر کے تمام ٹولز دیکھیں">Explore All Deen Helper Tools</span> <i data-lucide="arrow-right" class="w-5 h-5"></i>
@@ -330,6 +383,7 @@
         });
 
         // ===== LANGUAGE SWITCH =====
+        /** @param {string} lang */
         function applyLang(lang) {
             document.documentElement.lang = lang;
             document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
