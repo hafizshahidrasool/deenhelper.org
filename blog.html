@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deen Helper Blog: Islamic Articles, Tips & Guides</title>
+    <meta name="description" content="Read Islamic articles, tips and guides on Zakat, prayer, and daily worship from the Deen Helper blog." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://deenhelper.org/blog.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Deen Helper" />
+    <meta property="og:title" content="Deen Helper Blog: Islamic Articles, Tips & Guides" />
+    <meta property="og:description" content="Read Islamic articles, tips and guides on Zakat, prayer, and daily worship from the Deen Helper blog." />
+    <meta property="og:url" content="https://deenhelper.org/blog.html" />
+    <meta property="og:image" content="https://deenhelper.org/og-image.jpg" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Deen Helper Blog: Islamic Articles, Tips & Guides" />
+    <meta name="twitter:description" content="Read Islamic articles, tips and guides on Zakat, prayer, and daily worship." />
+    <meta name="twitter:image" content="https://deenhelper.org/og-image.jpg" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Deen Helper Blog",
+      "url": "https://deenhelper.org/blog.html",
+      "description": "Islamic articles, tips and guides on Zakat, prayer, and daily worship.",
+      "isPartOf": { "@type": "WebSite", "name": "Deen Helper", "url": "https://deenhelper.org/" }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <script src="https://unpkg.com/lucide@latest">
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['"Plus Jakarta Sans"', 'sans-serif'] },
+                    colors: {
+                        emerald: { 500: '#10b981', 600: '#059669' },
+                        dark: { 950: '#030712', 900: '#0f172a', 800: '#1e293b' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #ffffff 30%, #34d399 70%, #f59e0b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+        .mobile-submenu {
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        .mobile-submenu.open {
+            max-height: 500px;
+            opacity: 1;
+        }
+        .chevron-icon {
+            transition: transform 0.3s ease;
+        }
+        .chevron-icon.open {
+            transform: rotate(180deg);
+        }
+        .pulse-ring {
+            animation: pulse-ring 2.5s ease-in-out infinite;
+        }
+        @keyframes pulse-ring {
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.08);
+                opacity: 0.6;
+            }
+        }
+        .float-icon {
+            animation: float-icon 3s ease-in-out infinite;
+        }
+        @keyframes float-icon {
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        /* Language switch styles */
+        .lang-btn {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.text-emerald-400 {
+            background: rgba(16, 185, 129, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-dark-950 text-slate-100 font-sans antialiased overflow-x-hidden pb-16 md:pb-0">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav aria-label="Main navigation" class="sticky top-0 z-50 glass-panel border-b border-white/5 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="index.html" class="flex items-center gap-2.5">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                        <i data-lucide="moon" class="w-5 h-5 text-white"></i>
+                    </div>
+                    <span class="text-xl font-extrabold tracking-tight text-white">Deen <span class="text-emerald-400">Helper</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-6">
+                    <a href="index.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="Home" data-ur="ہوم">Home</a>
+                    <div class="relative group">
+                        <a href="#" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white flex items-center gap-1" data-en="Tools" data-ur="ٹولز">Tools <i data-lucide="chevron-down" class="w-3 h-3 transition-transform group-hover:rotate-180"></i></a>
+                        <div class="absolute left-0 top-full mt-2 hidden group-hover:block glass-panel border border-white/5 rounded-xl p-4 w-[280px] z-50 shadow-2xl space-y-1.5">
+                            <a href="zakat.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Zakat Calculator" data-ur="زکوٰۃ کیلکولیٹر">Zakat Calculator</a>
+                            <a href="prayer.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a>
+                            <a href="qibla.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Qibla Direction" data-ur="قبلہ کی سمت">Qibla Direction</a>
+                            <a href="hijri.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Hijri Date" data-ur="ہجری تاریخ">Hijri Date</a>
+                            <a href="tasbeeh.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Digital Tasbeeh" data-ur="ڈیجیٹل تسبیح">Digital Tasbeeh</a>
+                            <hr class="border-white/5 my-1">
+                            <a href="mosque.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder</a>
+                            <a href="inheritance.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Inheritance Calc" data-ur="وراثت کیلکولیٹر">Inheritance Calc</a>
+                            <a href="age.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Age Calculator" data-ur="عمر کیلکولیٹر">Age Calculator</a>
+                            <a href="nisab.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Nisab Calculator" data-ur="نصاب کیلکولیٹر">Nisab Calculator</a>
+                            <a href="fitra.html" class="block px-3 py-2 rounded-lg text-sm text-slate-300 hover:text-white hover:bg-white/5" data-en="Fitra Calculator" data-ur="فطرہ کیلکولیٹر">Fitra Calculator</a>
+                        </div>
+                    </div>
+                    <a href="about.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="About" data-ur="ہمارے بارے میں">About</a>
+                    <a href="blog.html" class="text-xs font-semibold uppercase tracking-wider text-emerald-400" data-en="Blog" data-ur="بلاگ">Blog</a>
+                    <a href="contact.html" class="text-xs font-semibold uppercase tracking-wider text-slate-300 hover:text-white" data-en="Contact" data-ur="رابطہ">Contact</a>
+
+                    <!-- Language buttons desktop -->
+                    <div class="flex items-center gap-1 pl-3 border-l border-white/10">
+                        <button class="lang-btn text-emerald-400" data-lang="en">EN</button>
+                        <span class="text-slate-500 text-xs">|</span>
+                        <button class="lang-btn text-slate-300" data-lang="ur">اردو</button>
+                    </div>
+                </div>
+
+                <!-- Mobile Hamburger + Language buttons -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <div class="flex items-center gap-1">
+                        <button class="lang-btn text-emerald-400" data-lang="en">EN</button>
+                        <span class="text-slate-500 text-xs">|</span>
+                        <button class="lang-btn text-slate-300" data-lang="ur">اردو</button>
+                    </div>
+                    <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false" class="p-2 rounded-lg text-slate-300 hover:text-white hover:bg-white/5 transition-colors focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MOBILE MENU ===== -->
+        <div id="mobile-menu" class="hidden lg:hidden glass-panel border-t border-white/5 px-4 pt-3 pb-6 space-y-2">
+            <a href="index.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="Home" data-ur="ہوم">Home</a>
+            <div>
+                <button id="mobile-tools-toggle" aria-label="Toggle tools menu" aria-expanded="false" class="flex items-center justify-between w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5 transition-colors">
+                    <span data-en="Tools" data-ur="ٹولز">Tools</span>
+                    <i data-lucide="chevron-down" id="mobile-chevron" class="w-4 h-4 chevron-icon"></i>
+                </button>
+                <div id="mobile-tools-dropdown" class="mobile-submenu pt-2 pb-2">
+                    <div class="grid grid-cols-2 gap-1.5 pl-2 pr-2">
+                        <a href="zakat.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Zakat Calc" data-ur="زکوٰۃ">Zakat Calc</a>
+                        <a href="prayer.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Prayer Times" data-ur="نماز اوقات">Prayer Times</a>
+                        <a href="qibla.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Qibla Finder" data-ur="قبلہ">Qibla Finder</a>
+                        <a href="hijri.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Hijri Date" data-ur="ہجری تاریخ">Hijri Date</a>
+                        <a href="tasbeeh.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Tasbeeh" data-ur="تسبیح">Tasbeeh</a>
+                        <a href="mosque.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Mosque Finder" data-ur="مسجد">Mosque Finder</a>
+                        <a href="inheritance.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Inheritance" data-ur="وراثت">Inheritance</a>
+                        <a href="age.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Age Calc" data-ur="عمر">Age Calc</a>
+                        <a href="nisab.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Nisab Calc" data-ur="نصاب">Nisab Calc</a>
+                        <a href="fitra.html" class="block px-2.5 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-white/5 bg-white/[0.02]" data-en="Fitra Calc" data-ur="فطرہ">Fitra Calc</a>
+                    </div>
+                </div>
+            </div>
+            <a href="about.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a>
+            <a href="blog.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-emerald-400 bg-white/10" data-en="Blog" data-ur="بلاگ">Blog</a>
+            <a href="contact.html" class="block px-4 py-2.5 rounded-xl text-sm font-semibold text-slate-300 hover:text-white hover:bg-white/5" data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a>
+        </div>
+    </nav>
+
+    <main>
+    <!-- ===== BLOG HERO ===== -->
+    <section class="relative pt-12 pb-8 md:pt-16 md:pb-12 z-10 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 uppercase tracking-wider mb-4" data-en="Deen Helper Blog" data-ur="دین ہیلپر بلاگ">
+                Deen Helper Blog
+            </span>
+            <h1 class="text-4xl sm:text-5xl font-extrabold text-white mb-4">
+                <span class="gradient-text" data-en="Latest Islamic Articles" data-ur="تازہ ترین اسلامی مضامین">Latest Islamic Articles</span>
+            </h1>
+            <p class="text-slate-300 text-base max-w-xl mx-auto mb-6" data-en="Read Islamic topics, tips and guides on Deen Helper blog." data-ur="دین ہیلپر کے بلاگ پر اسلامی موضوعات، تجاویز اور رہنمائی پڑھیں۔">
+                Deen Helper ke blog par islamic topics, tips aur guides parhen.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== BLOG POSTS (loaded from admin panel) ===== -->
+    <section class="py-6 z-10 relative">
+        <div class="max-w-4xl mx-auto px-4">
+
+            <!-- Posts render here -->
+            <div id="blog-posts-list" class="space-y-6"></div>
+
+            <!-- Shown only when there are no posts yet -->
+            <div id="blog-empty-state" class="hidden glass-panel border border-white/10 rounded-2xl p-10 md:p-14 text-center relative overflow-hidden">
+                <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative z-10">
+                    <div class="float-icon inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-500/10 border border-emerald-500/20 mb-6">
+                        <i data-lucide="pen-tool" class="w-10 h-10 text-emerald-400"></i>
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-3">
+                        <span data-en="New Blogs" data-ur="نئے بلاگز">نئے بلاگز</span> <span class="text-emerald-400" data-en="Coming Soon" data-ur="جلد آرہے ہیں">جلد آرہے ہیں</span>
+                    </h2>
+                    <p class="text-slate-300 text-lg max-w-lg mx-auto" data-en="We are bringing you useful Islamic articles, guidance and insights soon." data-ur="ہم آپ کے لیے جلد ہی مفید اسلامی مضامین، رہنمائی اور بصیرت لے کر آرہے ہیں۔">
+                        ہم آپ کے لیے جلد ہی مفید اسلامی مضامین، رہنمائی اور بصیرت لے کر آرہے ہیں۔
+                    </p>
+
+                    <div class="mt-8 flex flex-wrap items-center justify-center gap-3 text-sm text-slate-400">
+                        <span class="flex items-center gap-1.5 bg-white/5 px-4 py-2 rounded-full border border-white/5">
+                            <i data-lucide="clock" class="w-4 h-4 text-emerald-400"></i>
+                            <span data-en="Coming Soon" data-ur="جلد آرہا ہے">Coming Soon</span>
+                        </span>
+                        <span class="flex items-center gap-1.5 bg-white/5 px-4 py-2 rounded-full border border-white/5">
+                            <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i>
+                            <span data-en="Islamic Content" data-ur="اسلامی مواد">Islamic Content</span>
+                        </span>
+                        <span class="flex items-center gap-1.5 bg-white/5 px-4 py-2 rounded-full border border-white/5">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-emerald-400"></i>
+                            <span data-en="Exclusive Articles" data-ur="خصوصی مضامین">Exclusive Articles</span>
+                        </span>
+                    </div>
+
+                    <div class="mt-8 flex justify-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400/60 pulse-ring"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400/40 pulse-ring" style="animation-delay: 0.5s;"></span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400/20 pulse-ring" style="animation-delay: 1s;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fallback for crawlers and browsers that don't run JavaScript (blog posts load via JS fetch, invisible to them otherwise) -->
+    <noscript>
+        <div class="max-w-4xl mx-auto px-4 pb-10 text-center text-slate-300">
+            <p>Deen Helper Blog features Islamic articles on Zakat, prayer, and daily worship. Please enable JavaScript to view the latest posts.</p>
+        </div>
+    </noscript>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="border-t border-white/5 py-12 relative z-10 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col items-center justify-center gap-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+                    <i data-lucide="moon" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-lg font-extrabold tracking-tight text-white">Deen <span class="text-emerald-400">Helper</span></span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-xs text-slate-400 text-left">
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Main Pages" data-ur="اہم صفحات">Main Pages</h3>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="hover:text-emerald-400" data-en="Home" data-ur="ہوم">Home</a></li>
+                        <li><a href="about.html" class="hover:text-emerald-400" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a></li>
+                        <li><a href="blog.html" class="hover:text-emerald-400" data-en="Blog" data-ur="بلاگ">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-emerald-400" data-en="Contact Us" data-ur="رابطہ کریں">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Core Tools" data-ur="بنیادی ٹولز">Core Tools</h3>
+                    <ul class="space-y-2">
+                        <li><a href="zakat.html" class="hover:text-emerald-400" data-en="Zakat Calculator" data-ur="زکوٰۃ کیلکولیٹر">Zakat Calculator</a></li>
+                        <li><a href="prayer.html" class="hover:text-emerald-400" data-en="Prayer Times" data-ur="نماز کے اوقات">Prayer Times</a></li>
+                        <li><a href="qibla.html" class="hover:text-emerald-400" data-en="Qibla Direction" data-ur="قبلہ کی سمت">Qibla Direction</a></li>
+                        <li><a href="hijri.html" class="hover:text-emerald-400" data-en="Hijri Converter" data-ur="ہجری کنورٹر">Hijri Converter</a></li>
+                        <li><a href="tasbeeh.html" class="hover:text-emerald-400" data-en="Digital Tasbeeh" data-ur="ڈیجیٹل تسبیح">Digital Tasbeeh</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider mb-3" data-en="More Utilities" data-ur="مزید سہولیات">More Utilities</h3>
+                    <ul class="space-y-2">
+                        <li><a href="mosque.html" class="hover:text-emerald-400" data-en="Mosque Finder" data-ur="مسجد فائنڈر">Mosque Finder</a></li>
+                        <li><a href="inheritance.html" class="hover:text-emerald-400" data-en="Inheritance Calc" data-ur="وراثت کیلکولیٹر">Inheritance Calc</a></li>
+                        <li><a href="age.html" class="hover:text-emerald-400" data-en="Islamic Age Calc" data-ur="اسلامی عمر کیلکولیٹر">Islamic Age Calc</a></li>
+                        <li><a href="nisab.html" class="hover:text-emerald-400" data-en="Nisab Calculator" data-ur="نصاب کیلکولیٹر">Nisab Calculator</a></li>
+                        <li><a href="fitra.html" class="hover:text-emerald-400" data-en="Fitra Calculator" data-ur="فطرہ کیلکولیٹر">Fitra Calculator</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold text-white uppercase tracking-wider mb-3" data-en="Legal &amp; Terms" data-ur="قانونی اور شرائط">Legal & Terms</h3>
+                    <ul class="space-y-2">
+                        <li><a href="privacy.html" class="hover:text-emerald-400" data-en="Privacy Policy" data-ur="پرائیویسی پالیسی">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-emerald-400" data-en="Terms of Service" data-ur="شرائط و ضوابط">Terms of Service</a></li>
+                        <li><a href="disclaimer.html" class="hover:text-emerald-400" data-en="Disclaimer" data-ur="ڈس کلیمر">Disclaimer</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-[10px] text-slate-400 text-center border-t border-white/5 pt-6" data-en="© 2026 Deen Helper. All Rights Reserved." data-ur="© 2026 دین ہیلپر۔ جملہ حقوق محفوظ ہیں۔">&copy; 2026 Deen Helper. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        document.getElementById('mobile-tools-toggle').addEventListener('click', () => {
+            document.getElementById('mobile-tools-dropdown').classList.toggle('open');
+            document.getElementById('mobile-chevron').classList.toggle('open');
+        });
+
+        // ============================================================
+        // LANGUAGE SWITCH & BLOG POSTS LOADER (UPDATED)
+        // ============================================================
+        let currentLang = 'en';
+        const postsList = document.getElementById('blog-posts-list');
+        const emptyState = document.getElementById('blog-empty-state');
+
+        // Helper to escape HTML
+        /** @param {string} str */
+        function escapeHtml(str) {
+            const div = document.createElement('div');
+            div.textContent = str == null ? '' : str;
+            return div.innerHTML;
+        }
+
+        // Strip HTML tags from post content and shorten it for the card preview
+        /** @param {string} html */
+        function makeExcerpt(html, maxLen = 160) {
+            const div = document.createElement('div');
+            div.innerHTML = html || '';
+            const text = (div.textContent || '').replace(/\s+/g, ' ').trim();
+            return text.length > maxLen ? text.slice(0, maxLen).trim() + '…' : text;
+        }
+
+        // Load blog posts for given language
+        /** @param {string} lang */
+        function loadBlogPosts(lang) {
+            // Show loading state (optional)
+            postsList.innerHTML =
+                '<div class="text-center py-12 text-slate-400">Loading posts...</div>';
+            emptyState.classList.add('hidden');
+
+            fetch(`/api/blog?lang=${lang}`)
+                .then(res => res.json())
+                .then(posts => {
+                    // Clear list
+                    postsList.innerHTML = '';
+
+                    if (!posts || posts.length === 0) {
+                        // Show empty state with translated text (already handled by applyLang)
+                        emptyState.classList.remove('hidden');
+                        return;
+                    }
+
+                    // Render each post as a card: heading + short excerpt + Read More link.
+                    // Read More goes to /blog/{slug}, a separate server-rendered page
+                    // (see functions/blog/[slug].js) that has the full article baked
+                    // straight into the HTML, so AI crawlers can read it without running JS.
+                    posts.forEach(post => {
+                        const postUrl = `/blog/${encodeURIComponent(post.slug)}`;
+                        const article = document.createElement('article');
+                        article.className =
+                            'glass-panel border border-white/10 rounded-2xl p-6 md:p-8 hover:border-emerald-500/30 transition-all';
+                        article.innerHTML = `
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-2">
+                                <a href="${postUrl}" class="hover:text-emerald-400 transition-colors">${escapeHtml(post.title)}</a>
+                            </h2>
+                            <p class="text-xs text-slate-500 mb-4">${escapeHtml(post.created_at || '')}</p>
+                            <p class="text-slate-300 leading-relaxed mb-4">${escapeHtml(makeExcerpt(post.content))}</p>
+                            <a href="${postUrl}" class="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-400 hover:text-emerald-300">
+                                <span data-en="Read More" data-ur="مزید پڑھیں">Read More</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+                        `;
+                        postsList.appendChild(article);
+                    });
+
+                    // New "Read More" arrow icons were just added to the page, so lucide needs to redraw them
+                    lucide.createIcons();
+                })
+                .catch(err => {
+                    console.error('Error fetching blog posts:', err);
+                    // On error, show empty state (or error message)
+                    postsList.innerHTML =
+                        '<div class="text-center py-12 text-red-400">Failed to load posts. Please try again later.</div>';
+                });
+        }
+
+        // Apply language: update static texts, dir, and reload posts
+        /** @param {string} lang */
+        function applyLang(lang) {
+            currentLang = lang;
+            document.documentElement.lang = lang;
+            document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+
+            // Update all data-en/data-ur elements
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = lang === 'ur' ? el.getAttribute('data-ur') : el.getAttribute('data-en');
+                if (text !== null) el.textContent = text;
+            });
+
+            // Toggle active class on language buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const active = btn.dataset.lang === lang;
+                btn.classList.toggle('text-emerald-400', active);
+                btn.classList.toggle('text-slate-300', !active);
+            });
+
+            // Save preference
+            localStorage.setItem('deenhelper_lang', lang);
+
+            // Reload blog posts for the new language
+            loadBlogPosts(lang);
+        }
+
+        // Attach click events to language buttons
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const newLang = btn.dataset.lang;
+                if (newLang !== currentLang) {
+                    applyLang(newLang);
+                }
+            });
+        });
+
+        // Load saved language or default to 'ur'
+        const savedLang = localStorage.getItem('deenhelper_lang') || 'en';
+        // Apply language (this will also load posts)
+        applyLang(savedLang);
+
+        // NOTE: The backend API (/api/blog) must accept a 'lang' parameter
+        // and return the appropriate columns:
+        //   - If lang=en: return title_en as title, content_en as content
+        //   - If lang=ur: return title_ur as title, content_ur as content
+        // Also make sure to include created_at, etc.
+    </script>
+</body>
+</html>
